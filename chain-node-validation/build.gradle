@@ -1,0 +1,83 @@
+apply plugin: 'org.springframework.boot'        //For fat jar support
+
+
+
+springBoot {
+    mainClassName = 'io.setl.bc.pychain.node.ValidationNode'
+    buildInfo()
+}
+
+buildscript {
+    repositories {
+        //Allow local repository for snapshot builds
+        if (version.endsWith("SNAPSHOT")) { mavenLocal() }
+        maven { url "http://si-nexus01.dev.setl.io:8081/repository/maven-public/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:" + springBootVersion)
+    }
+}
+
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4j2Version
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4j2Version
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4j2Version
+
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: sqlliteVersion
+
+    compile group: 'org.springframework.boot', name:'spring-boot-actuator', version: springBootVersion
+    compile ("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}") {
+        exclude module: 'spring-boot-starter-logging'
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-tomcat'
+        exclude module: 'spring-boot-starter-logging'
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-tomcat'
+        exclude module: 'spring-boot-starter-logging'
+    }
+
+    // Micrometer and Spring Metrics
+    compile("io.micrometer:micrometer-core:${micrometerVersion}")
+    compile("org.springframework.metrics:spring-metrics:${springMetricsVersion}")
+
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: mysqlVersion
+
+
+    //ONLY HACK FOR COMMONS LOGGING and boot plugin
+//    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: slf4jVersion
+
+    compile group: 'io.setl.utils.jwt', name: 'setl-jwt-spring', version: setlJwtSpringVersion
+
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
+
+    compile project(':chain-core')
+    compile project(':chain-code-tx')
+    compile project(':chain-peerman-netty')
+    compile project(':chain-peerman-kafka')
+    compile project(':chain-store-berkeley')
+    compile project(':chain-store-bos')
+    compile project(':chain-dbstore-mysql')
+    compile project(':chain-dbstore-sqlite')
+    compile project(':chain-validator-background')
+    compile project(':chain-api-web')
+
+
+    // FOR JSON TESTING
+    compile project(':chain-json-tx')
+    compile project(':chain-cw-data')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-logging'
+    }
+}

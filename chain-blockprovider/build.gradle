@@ -1,0 +1,8 @@
+dependencies {
+    compile project(':chain-peerman')
+    compile project(':chain-peerman-netty')
+    compile project(':chain-peerman-kafka')
+    compile project(':chain-common')
+
+    testCompile project(':chain-code-tx')
+}

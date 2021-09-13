@@ -1,0 +1,32 @@
+
+dependencies {
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile project(':chain-core')
+    compile project(':chain-code-tx')
+    compile("org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-tomcat'
+        exclude module: 'spring-boot-starter-logging'
+    }
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+
+//Data
+    compile group: 'com.jsoniter', name: 'jsoniter', version: '0.9.8'
+////Crypto
+    compile group: 'org.abstractj.kalium', name: 'kalium', version: '0.3.0'
+////Logging
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: slf4jVersion
+
+//// Jackson
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+    // https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core
+    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+
+    //Required for API calls
+    compile project(':chain-dash-web')
+    compile project(':chain-peerman')
+
+}

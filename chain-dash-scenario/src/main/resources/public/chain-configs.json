@@ -1,0 +1,16 @@
+{
+  "100": {
+    "psGroupID": {
+      "ps1": "CHAPS",
+      "ps2": "CREST",
+      "ps3": "CLS",
+      "ps4": "FPS",
+      "ps5": "BACS",
+      "ps6": "LINK"
+    },
+    "chainTheme": "skin-blur-ocean",
+    "RestPort": "13404",
+    "url": "proxy.setl.io",
+    "showXChain": "0"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "stateName": "sample_doc_state.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "update namespace",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_DATA_NAMESPACE",
+        "namespaceId": "test-1",
+        "patch": [
+          {
+            "op": "add",
+            "path": "/privileges/updateDescription/-",
+            "value": "AFQ_aZPmJs0D2hy7QL9T11eQ-79EUYUr0g"
+          }
+        ]
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.DataNamespace/0/privileges/updateDescription/1",
+          "value": "AFQ_aZPmJs0D2hy7QL9T11eQ-79EUYUr0g"
+        },
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/5",
+          "value": {
+            "address": "AFQ_aZPmJs0D2hy7QL9T11eQ-79EUYUr0g",
+            "addressMetadata": null,
+            "addressPermissions": 0,
+            "balance": {},
+            "highPriorityNonce": 0,
+            "lowPriorityNonce": 0,
+            "nonce": 0,
+            "authorisedTx": null,
+            "updateHeight": 3,
+            "updateTime": 0
+          }
+        }
+      ]
+    },
+    {
+      "logNewState": false,
+      "name": "update namespace (bad patch)",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "Invalid or illegal patch: JSON Structure did not contain item at: /aclId"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_DATA_NAMESPACE",
+        "namespaceId": "test-1",
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/aclId",
+            "value": [
+              "test-1",
+              "basic-acl"
+            ]
+          }
+        ]
+      },
+      "changes": []
+    }
+  ]
+}

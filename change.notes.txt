@@ -1,0 +1,19 @@
+#Change notes
+#Please note any changes to configuration, all interface changes, and any other information that is important to a release.
+#Notes should be added with newest at the top.
+#Dependant database changes should be listed in dbChanges.txt
+#Upon a release, these notes and dbChanges will be copied into release.notes.txt on the release branch, along with a git cherry -v list of changes within that release.
+
+20/07/2018
+
+Fixed and improved the behaviour of the "floor", "ceil", "round" and "roundHE" functions in contracts. These functions now take a second optional parameter which determines the number of decimal places to round to. For example:
+
+floor(35.622)     = 35.000
+floor(35.622,  2) = 35.620
+floor(35.622, -1) = 30.00
+
+
+##Example only
+31/05/2018
+Add new mandatory configuration parameter, tx.dummy.example=1234
+

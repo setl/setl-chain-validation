@@ -1,0 +1,132 @@
+{
+  "stateName": "sample_doc_state.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "update description",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_DESCRIPTION",
+        "documentId": [
+          "test-1",
+          "document-hello-world"
+        ],
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/title",
+            "value": "History of Hello World"
+          },
+          {
+            "op": "replace",
+            "path": "/metadata",
+            "value": null
+          },
+          {
+            "op": "replace",
+            "path": "/aclId",
+            "value": [
+              "test-1",
+              "basic-acl"
+            ]
+          }
+        ]
+      },
+      "changes": [
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/aclId/0",
+          "value": "test-1"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/aclId/1",
+          "value": "basic-acl"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/metadata",
+          "value": ""
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/title",
+          "value": "History of Hello World"
+        }
+      ]
+    },
+    {
+      "logNewState": false,
+      "name": "update description and validator",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_DESCRIPTION",
+        "documentId": [
+          "test-1",
+          "document-hello-world"
+        ],
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/validatorId",
+            "value": [
+              "test-1",
+              "book"
+            ]
+          }
+        ]
+      },
+      "changes": [
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/validatorId/0",
+          "value": "test-1"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.DataDocument/1/validatorId/1",
+          "value": "book"
+        }
+      ]
+    },
+    {
+      "logNewState": false,
+      "name": "update description and validator",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "Document does not validate"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_DESCRIPTION",
+        "documentId": [
+          "test-1",
+          "document-hello-world"
+        ],
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/validatorId",
+            "value": [
+              "test-1",
+              "validator-1"
+            ]
+          }
+        ]
+      },
+      "changes": []
+    }
+  ]
+}

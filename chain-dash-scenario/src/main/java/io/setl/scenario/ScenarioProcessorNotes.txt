@@ -1,0 +1,168 @@
+From python postScenarioTransactions
+//    Mode SConfig = Mode.NORMAL;
+//
+//    currentPosition = SETLState.ScenarioHoldings;
+//
+////GRAB WALLET and ENSURE at least one address
+////    myWallet = getattr( SETLState, 'wallet', False)
+////    if not myWallet:
+////    myWallet = SETLState.waletmanager.getWallet(0)
+////    if (len(myWallet.addresses) == 0):
+////    myWallet.new_address()
+//
+////    stateView = SETLState.getCurrentState()
+//    xChainIDs = getXchain();
+////      #Get Assets appropriate to this scenario
+//    GoodAssets = thisScenario['GoodAssets']
+//
+////    SConfig = thisScenario.get('Config', 0)      #1 = Simple One to Two Contract, 2 = Null TX
+//    List<Holding> goodHoldings;
+//
+////    Percentage = thisScenario.get('BlockPercentage', 0.02) #
+////    crossChainPercentage = thisScenario.get('xchainPercentage', 0.05)
+//
+//NOTE BLOCKSIZE IS NEVER SET - SO DEFAULTS TO txToDo
+//blockPercentage defaults to     0.02 == minholding = txtodo*100/0.02 = txtodo*5000
+//    minHolding = (Math.min((blockSize, txToDo) * 100) / blockPercentage;
+//
+////      #Don 't sent xChain TX if there is no one to receive them.
+//    if (xChainIDs.isEmpty()) {
+//      crossChainPercentage = 0;
+//    }
+//
+//    int TXDone = 0;
+//    List<Txi> TXList = new ArrayList<>();
+//    UsedFrom = thisScenario.get('UsedFrom', TXToDo)
+//    int TXBlock = Math.min(blockSize, txToDo);
+//    long scenarioMaxTradeSize = getScenarioMaxTradeSize();
+//
+//    while (TXDone < txToDo) {
+//
+//      //Pick a holding to send
+//      if (SConfig == Mode.NULLTX) {
+//        //Null TX, No need to check holdings etc...
+//      } else {
+//        if (goodHoldings.isEmpty()) {
+//
+//          for address, data in currentPosition.items() {
+//
+//            if (data is not None):
+//            GoodHoldings +=[(address, AssetID, AssetHolding)for AssetID, AssetHolding in data.items() if (AssetID in GoodAssets)and(AssetHolding >= minHolding)]
+//          }
+//          if (SConfig == Mode.CONTRACT
+//              && goodHoldings.size() < 2) {
+//            return 0;
+//          }
+//
+//          if (goodHoldings.isEmpty()) {
+//            return 0;
+//          }
+//        }
+//
+////            #Not a Null TX.
+//        Holding thisHolding = chooseAndRemove(goodHoldings);
+//        int totalToSend = Math.min(blockPercentage * thisHolding.getBalance(), thisHolding.getBalance());
+//        long chunkSize = totalToSend / (100 * TXBlock) * 100;
+//        fromAddress = myWallet.addresses[thisHolding[0]];
+//
+//        if (scenarioMaxTradeSize > 0) {
+//          chunkSize = Math.min(scenarioMaxTradeSize, chunkSize);
+//        }
+//
+//        if (fromAddress.address in UsedFrom):
+//        continue
+//
+//            namespace,classid = thisHolding[1].split("|")
+//        UsedFrom.append(fromAddress.address)
+//
+////        if SETLState.realtime:
+////        currentPosition[thisHolding[0]][thisHolding[1]] = thisHolding[2]
+//
+////        log.log(LOG_LEVEL.ScenarioProcessor,
+////            '  ScenarioTX, sending ' + str(thisHolding[1]) + " from " + str(thisHolding[0]) + ". Opening position " + str(thisHolding[2]))
+//      }
+////         #Send it
+//      txCount = TXBlock;
+//      while (txCount > 0) {
+//
+//        thisTX = None
+//
+//        if (SConfig == Mode.NORMAL) {
+//          targetAddress = choice(myWallet.addresses.keys())
+//
+//          if (targetAddress != thisHolding[0]):
+////    #Send 'chunkSize' of Asset to targetAddress from thisHolding[ 0]
+////    #log.log(0,
+//          "ScenarioProcessor " + thisScenario['Name'] + ". Sending " + str(chunkSize) + " " + thisHolding[1] + " from " + str(thisHolding[0]) + " to "
+//              + str(
+//              targetAddress))
+//
+//          if (crossChainPercentage > 0.0 && random.nextDouble() <= crossChainPercentage) {
+//            toChain = choice(xChainIDs)
+////    #thisTX = xchain_asset_transfer_tx_create(fromAddress, toChain, targetAddress, namespace, classid, chunkSize, thisScenario['Name'], '')
+//            thisStatus, thisTX = tx_transfer_xchain_specific_asset_balance(myWallet, stateView, fromAddress, namespace, classid, toChain, targetAddress,
+//                chunkSize,
+//                thisScenario['Name'], '')
+//          } else {
+//
+////    #thisTX = asset_transfer_tx_create(fromAddress, targetAddress, namespace, classid, chunkSize, thisScenario['Name'], '')
+//            thisTX = tx_transfer_specific_asset_balance(myWallet, stateView, namespace, classid, fromAddress, targetAddress, chunkSize, thisScenario['Name'],
+//                '')
+//
+//            thisTx = new AssetTransferTx(chainId, INT_1, null, nonce, true, fromPubKey,
+//                fromAddress, nameSpace, classId, toAddress, amount, signature, protocol, metadata, -1,
+//                "", 0L);
+//          }
+//          currentPosition[thisHolding[0]][thisHolding[1]] = currentPosition[thisHolding[0]][thisHolding[1]] - chunkSize
+//
+//          if (currentPosition.get(targetAddress, None) is None):
+//          currentPosition[targetAddress] = {}
+//
+//          if (thisHolding[1] in currentPosition[ targetAddress]):
+//          currentPosition[targetAddress][thisHolding[1]] = currentPosition[targetAddress][thisHolding[1]] + chunkSize
+//    else:
+//          currentPosition[targetAddress][thisHolding[1]] = chunkSize
+//
+//          except Exception as emesg:
+//          showTraceback(log.log)
+//
+//          txCount -= 1
+//        } else if (SConfig == Mode.NULLTX) {
+//          fromAddress = myWallet.addresses.values()[0]
+//          thisStatus, thisTX = tx_null(myWallet, stateView, fromAddress)
+//          txCount -= 1
+//        }
+//
+//        if (thisTx != null) {
+//          TXList.add(thisTx);
+//        }
+//
+//        SETLState.verifier.addSig(thisTX.sig, thisTX.hash, thisTX.frompub, thisTX.fromaddr)
+//
+//        logger.info("Tx created");
+//
+//      }
+//      TXDone += TXBlock;
+//      log.log(0, "ScenarioProcessor " + thisScenario['Name'] + ". Sent " + str(TXBlock) + " transactions")
+//
+//      for (Txi thisTX : TXList) {
+//
+//        if (bypassVerification) {
+//          txPool.addTx(null, tx);
+//        }
+//
+//        transactionListenerInternal.transactionReceivedInternal(thisTX.);
+////    skipValidation = True
+//
+////    if skipValidation:
+////    vn_state.process_validated_tx(
+////        True,
+////        (None,None),
+////        thisTX,
+////        log,
+////        SETLState)
+////         else:
+////    vn_state.spawn_validate_obj(SETLState, 0x04, thisTX, (None,None), SETLState.proc_queue, SETLState.getCurrentState())
+//      }
+//      UsedFromTrim = thisScenario.get('UsedFromTrim', 10)
+//      thisScenario['UsedFrom'] = UsedFrom[-UsedFromTrim:]

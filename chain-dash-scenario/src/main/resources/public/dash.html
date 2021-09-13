@@ -1,0 +1,3417 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no">
+  <meta charset="UTF-8">
+
+  <meta name="description" content="Violate Responsive Admin Template">
+  <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+
+  <title>SETL Network</title>
+
+  <!-- CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/form.css" rel="stylesheet">
+  <!--        <link href="css/calendar.css" rel="stylesheet">-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/icons.css" rel="stylesheet">
+  <link href="css/generics.css" rel="stylesheet">
+  <link href="css/jsontree.css" rel="stylesheet">
+
+  <!--Custom css-->
+  <link href="css/changeTheme.css" rel="stylesheet">
+  <link href="css/override.css" rel="stylesheet">
+
+</head>
+
+<body id="skin-blur-ocean" data-chain-id="100">
+
+<header id="header" class="media">
+  <a href="" id="menu-toggle"></a>
+  <a class="logo pull-left" href="index.php">SETL.io</a>
+
+  <div class="media-body">
+    <div class="media" id="top-menu">
+      <div class="pull-left tm-icon">
+        <a data-drawer="messages" class="drawer-toggle" href="">
+          <i class="sa-top-message"></i>
+          <i class="n-count animated">5</i>
+          <span>Messages</span>
+        </a>
+      </div>
+      <!--                    <div class="pull-left tm-icon">-->
+      <!--                        <a data-drawer="notifications" class="drawer-toggle" href="">-->
+      <!--                            <i class="sa-top-updates"></i>-->
+      <!--                            <i class="n-count animated">9</i>-->
+      <!--                            <span>Updates</span>-->
+      <!--                        </a>-->
+      <!--                    </div>-->
+
+
+      <div id="time" class="pull-right">
+        <span id="hours"></span>
+        :
+        <span id="min"></span>
+        :
+        <span id="sec"></span>
+      </div>
+
+      <div class="media-body">
+        <button class="main-search" id="explorerSearchBtn">
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="clearfix"></div>
+
+<section id="main" class="p-relative" role="main">
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+
+    <!-- Sidbar Widgets -->
+    <!--<div class="side-widgets overflow">
+        &lt;!&ndash; Profile Menu &ndash;&gt;
+        <div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
+            <a href="" data-toggle="dropdown">
+                <img class="profile-pic animated" src="img/profile-pic.jpg" alt="">
+            </a>
+            <ul class="dropdown-menu profile-menu">
+                <li><a href="">My Profile</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><a href="">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><a href="">Settings</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                <li><a href="">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+            </ul>
+            <h4 class="m-0">Malinda Hollaway</h4>
+            @malinda-h
+        </div>
+
+        &lt;!&ndash; Calendar &ndash;&gt;
+        <div class="s-widget m-b-25">
+            <div id="sidebar-calendar"></div>
+        </div>
+
+        &lt;!&ndash; Feeds &ndash;&gt;
+        <div class="s-widget m-b-25">
+            <h2 class="tile-title">
+               News Feeds
+            </h2>
+
+            <div class="s-widget-body">
+                <div id="news-feed"></div>
+            </div>
+        </div>
+
+        &lt;!&ndash; Projects &ndash;&gt;
+        <div class="s-widget m-b-25">
+            <h2 class="tile-title">
+                Projects on going
+            </h2>
+
+            <div class="s-widget-body">
+                <div class="side-border">
+                    <small>Joomla Website</small>
+                    <div class="progress progress-small">
+                         <a href="#" data-toggle="tooltip" title="" class="progress-bar tooltips progress-bar-danger" style="width: 60%;" data-original-title="60%">
+                              <span class="sr-only">60% Complete</span>
+                         </a>
+                    </div>
+                </div>
+                <div class="side-border">
+                    <small>Opencart E-Commerce Website</small>
+                    <div class="progress progress-small">
+                         <a href="#" data-toggle="tooltip" title="" class="tooltips progress-bar progress-bar-info" style="width: 43%;" data-original-title="43%">
+                              <span class="sr-only">43% Complete</span>
+                         </a>
+                    </div>
+                </div>
+                <div class="side-border">
+                    <small>Social Media API</small>
+                    <div class="progress progress-small">
+                         <a href="#" data-toggle="tooltip" title="" class="tooltips progress-bar progress-bar-warning" style="width: 81%;" data-original-title="81%">
+                              <span class="sr-only">81% Complete</span>
+                         </a>
+                    </div>
+                </div>
+                <div class="side-border">
+                    <small>VB.Net Software Package</small>
+                    <div class="progress progress-small">
+                         <a href="#" data-toggle="tooltip" title="" class="tooltips progress-bar progress-bar-success" style="width: 10%;" data-original-title="10%">
+                              <span class="sr-only">10% Complete</span>
+                         </a>
+                    </div>
+                </div>
+                <div class="side-border">
+                    <small>Chrome Extension</small>
+                    <div class="progress progress-small">
+                         <a href="#" data-toggle="tooltip" title="" class="tooltips progress-bar progress-bar-success" style="width: 95%;" data-original-title="95%">
+                              <span class="sr-only">95% Complete</span>
+                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Side Menu -->
+    <ul class="list-unstyled side-menu">
+      <li class="active">
+        <a class="sa-side-home" href="#" data-page-id="dash-wrapper">
+          <span class="menu-item">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a class="sa-side-typography" href="#" data-page-id="transactions-view-wrapper">
+          <span class="menu-item">Transactions</span>
+        </a>
+      </li>
+      <li>
+        <a class="sa-side-widget" href="#" data-page-id="blocks-view-wrapper">
+          <span class="menu-item">Blocks</span>
+        </a>
+      </li>
+      <li>
+        <a class="sa-side-table" href="#" data-page-id="state-view-wrapper">
+          <span class="menu-item">State View</span>
+        </a>
+      </li>
+
+
+      <li>
+        <a class="sa-side-setting " href="#" data-page-id="setting-page-wrapper">
+          <span class="menu-item">Setting</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="sa-side-wallet " href="#" data-page-id="wallet-page-wrapper">
+          <span class="menu-item">Wallet</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="sa-side-handshake" href="#" data-page-id="contract-page-wrapper">
+          <span class="menu-item">Contract</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="sa-side-log" href="#" data-page-id="log-page-wrapper">
+          <span class="menu-item">Log & Diagnosis</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="sa-side-ui" href="#" data-page-id="theme-page-wrapper">
+          <span class="menu-item">Change Theme</span>
+        </a>
+      </li>
+      <li>
+        <a class="sa-side-exit " href="#">
+          <span class="menu-item">Logout</span>
+        </a>
+      </li>
+    </ul>
+
+  </aside>
+
+  <!-- Content -->
+  <section id="content" class="container ">
+
+    <!-- Messages Drawer -->
+    <div id="messages" class="tile drawer animated">
+
+      <div class="listview narrow">
+        <div class="media">
+          <h8>Twitter From Bank of England</h8>
+          <span class="drawer-close">&times;</span>
+        </div>
+        <div class="overflow" id="twitter-wrapper" style="height: 278px">
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Notification Drawer -->
+    <div id="notifications" class="tile drawer animated">
+      <div class="listview narrow">
+        <div class="media">
+          <a href="">Notification Settings</a>
+          <span class="drawer-close">&times;</span>
+        </div>
+        <div class="overflow" style="height: 254px">
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/1.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">Nadin Jackson - 2 Hours ago</small>
+              <br>
+              <a class="t-overflow" href="">Mauris consectetur urna nec tempor adipiscing. Proin sit amet nisi ligula. Sed eu adipiscing lectus</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/2.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">David Villa - 5 Hours ago</small>
+              <br>
+              <a class="t-overflow" href="">Suspendisse in purus ut nibh placerat Cras pulvinar euismod nunc quis gravida. Suspendisse pharetra</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/3.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">Harris worgon - On 15/12/2013</small>
+              <br>
+              <a class="t-overflow" href="">Maecenas venenatis enim condimentum ultrices fringilla. Nulla eget libero rhoncus, bibendum diam eleifend, vulputate
+                mi. Fusce non nibh pulvinar, ornare turpis id</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/4.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">Mitch Bradberry - On 14/12/2013</small>
+              <br>
+              <a class="t-overflow" href="">Phasellus interdum felis enim, eu bibendum ipsum tristique vitae. Phasellus feugiat massa orci, sed viverra felis
+                aliquet quis. Curabitur vel blandit odio. Vestibulum sagittis quis sem sit amet tristique.</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/1.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">Nadin Jackson - On 15/12/2013</small>
+              <br>
+              <a class="t-overflow" href="">Ipsum wintoo consectetur urna nec tempor adipiscing. Proin sit amet nisi ligula. Sed eu adipiscing lectus</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="pull-left">
+              <img width="40" src="img/profile-pics/2.jpg" alt="">
+            </div>
+            <div class="media-body">
+              <small class="text-muted">David Villa - On 16/12/2013</small>
+              <br>
+              <a class="t-overflow" href="">Suspendisse in purus ut nibh placerat Cras pulvinar euismod nunc quis gravida. Suspendisse pharetra</a>
+            </div>
+          </div>
+        </div>
+        <div class="media text-center whiter l-100">
+          <a href="">
+            <small>VIEW ALL</small>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--&lt;!&ndash; Breadcrumb &ndash;&gt;-->
+    <!--<ol class="breadcrumb hidden-xs">-->
+    <!--<li><a href="#">Home</a></li>-->
+    <!--<li><a href="#">Library</a></li>-->
+    <!--<li class="active">Data</li>-->
+    <!--</ol>-->
+    <section id="dash-wrapper" class="page-wrapper active">
+      <h4 class="page-title">DASHBOARD - <span id="current-connected-node-title"></span></h4>
+
+      <!-- Shortcuts -->
+      <!-- <div class="block-area shortcut-area">
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/money.png" alt="">
+               <small class="t-overflow">Purchases</small>
+           </a>
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/twitter.png" alt="">
+               <small class="t-overflow">Tweets</small>
+           </a>
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/calendar.png" alt="">
+               <small class="t-overflow">Calendar</small>
+           </a>
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/stats.png" alt="">
+               <small class="t-overflow">Statistics</small>
+           </a>
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/connections.png" alt="">
+               <small class="t-overflow">Connection</small>
+           </a>
+           <a class="shortcut tile" href="">
+               <img src="img/shortcuts/reports.png" alt="">
+               <small class="t-overflow">Reports</small>
+           </a>
+       </div>-->
+
+      <hr class="whiter"/>
+
+      <!-- Quick Stats -->
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats">
+              <!--<div id="stats-line-2" class="pull-left"></div>-->
+              <div class="data">
+                <h2 id="blockheight" data-value="123456">0</h2>
+                <small>Block Height</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats media">
+              <div id="stats-line-sinceLastBlockSeconds" class="pull-left"></div>
+              <div class="media-body">
+                <h2 id="sinceLastBlockSeconds" data-value="0">0</h2>
+                <small>Since Last Block (s)</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats media">
+
+              <div id="stats-line-movementsLastBlock" class="pull-left"></div>
+
+              <div class="media-body">
+                <h2 id="movementsLastBlock" data-value="4896">0</h2>
+                <small>Movements Last Block</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats media">
+
+              <div id="stats-line-movementPS" class="pull-left"></div>
+
+              <div class="media-body">
+                <h2 id="movementsPS" data-value="4767">0</h2>
+                <small>Movements /Day</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats media">
+              <div id="stats-line-movements24h" class="pull-left"></div>
+              <div class="media-body">
+                <h2 id="movements24h" data-value="8976546">0</h2>
+                <small>Movements 24h</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <div class="tile quick-stats media">
+              <div id="stats-line-lastBlockTimeSeconds" class="pull-left"></div>
+              <div class="media-body">
+                <h2 id="lastBlockTimeSeconds" data-value="5">0</h2>
+                <small>Last Block Time (s)</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-8">
+            <!-- USA Map -->
+            <div class="tile">
+              <h2 class="tile-title">Active Nodes</h2>
+              <div class="tile-config dropdown">
+                <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                <ul class="dropdown-menu pull-right text-right">
+                  <li><a href="">Refresh</a></li>
+                  <li><a href="">Settings</a></li>
+                </ul>
+              </div>
+
+              <div id="world-map"></div>
+            </div>
+          </div>
+
+
+          <!-- Dynamic Chart -->
+          <div class="col-md-4">
+            <div class="tile">
+              <h2 class="tile-title">Payment Systems</h2>
+              <div class="tile-config dropdown">
+                <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                <ul class="dropdown-menu pull-right text-right">
+                  <li><a href="">Refresh</a></li>
+                  <li><a href="">Settings</a></li>
+                </ul>
+              </div>
+
+              <div class="p-10">
+                <div id="dash_bar-chart" class="main-chart" style=" height: 280px"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="whiter"/>
+
+      <!-- Main Widgets -->
+
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Pies -->
+            <div class="tile text-center" id="proposal-pie-chart-wrapper">
+              <div class="tile-dark p-10">
+
+              </div>
+            </div>
+            <div id="tableHover">
+
+              <div class="table-responsive overflow" id="dash-last-three-block-wrapper" style="overflow: hidden;" tabindex="5003">
+                <table class="table table-bordered table-hover tile">
+                  <thead>
+                  <tr>
+                    <th>Block No.</th>
+                    <th>Block Time</th>
+                    <th>Movements</th>
+                    <th>Proposed By</th>
+                    <th>% Signed</th>
+                    <th>% Voted</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr data-block-id=0></tr>
+                  <tr data-block-id=1></tr>
+                  <tr data-block-id=2></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <!-- Activity -->
+            <div class="tile">
+              <h2 class="tile-title">Current Proposal</h2>
+              <div class="tile-config dropdown">
+                <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                <ul class="dropdown-menu pull-right text-right">
+                  <li><a href="">Refresh</a></li>
+                  <li><a href="">Settings</a></li>
+                </ul>
+              </div>
+
+              <div class="listview narrow">
+
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalTime"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Proposal Time</h6>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalMovements"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Number of Movements</h6>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalNode"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Proposed By</h6>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalSigned"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Signed By</h6>
+                  </div>
+                </div>
+
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalVoted"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Voted By</h6>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="pull-right">
+                    <div class="counts" id="proposalBlock"><span class="animated fadeInDown"></span></div>
+                  </div>
+                  <div class="media-body">
+                    <h6>Block Number</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="whiter">
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="tableHover1">
+
+              <div class="table-responsive overflow" id="dash-last-12-transactions-wrapper" style="overflow: hidden;" tabindex="5003">
+                <table class="table table-bordered table-hover tile">
+                  <thead>
+                  <tr>
+                    <th>Movement ID</th>
+                    <th>Issuer</th>
+                    <th>Instrument</th>
+                    <th>Key From</th>
+                    <th>Key To</th>
+                    <th>Protocol</th>
+                    <th>External Ref</th>
+                    <!--<th>Contingent</th>-->
+                    <th>Units</th>
+                    <th>Time</th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="transactions-view-wrapper" class="page-wrapper">
+      <h4 class="page-title">TRANSACTIONS VIEW</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="make-switch" id="receiveTransactionSwitch" data-text-label="<h6>Update</h6>" data-on-label="<i class='fa fa-check'></i>"
+                 data-off-label="<i class='fa fa-times'></i>">
+              <input type="checkbox" checked>
+            </div>
+            <div id="tableHover5">
+
+              <div class="table-responsive overflow" id="transaction-page-latest-transactions-wrapper" style="overflow: hidden;" tabindex="5003">
+                <table class="table table-bordered table-hover tile">
+                  <thead>
+                  <tr>
+                    <th>Movement ID</th>
+                    <th>Issuer</th>
+                    <th>Instrument</th>
+                    <th>Key From</th>
+                    <th>Key To</th>
+                    <th>Protocol</th>
+                    <th>External Ref</th>
+                    <!--<th>Contingent</th>-->
+                    <th>Units</th>
+                    <th>Time</th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blocks-view-wrapper" class="page-wrapper">
+      <h4 class="page-title">BLOCKS VIEW</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="tile" id="block-list-wrapper">
+              <h2 aria-controls="block-list-content-wrapper" aria-expanded="true" href="#block-list-content-wrapper" data-toggle="collapse" class="tile-title">
+                Latest Blocks</h2>
+              <div id="block-list-content-wrapper" class="list-group collapse" style="height: auto;">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-10">
+            <div class="tile" id="block-basic-info-wrapper">
+              <h2 class="tile-title">Block Basic Info</h2>
+
+              <div class="listview narrow">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="pull-right">
+                        <div id="block-info-height" class="counts"><span class="animated fadeInDown"></span></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Height</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="pull-right">
+                        <div id="block-info-hash" class="counts" data-toggle="tooltip" data-placement="top"><span class="animated fadeInDown"></span></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Hash</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="whiter"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="pull-right">
+                        <div id="block-info-node" class="counts"><span class="animated fadeInDown"></span></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Node</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="pull-right">
+                        <div id="block-info-movement" class="counts"><span class="animated fadeInDown"></span></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Movement</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="whiter"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="pull-right">
+                        <div id="block-info-time" class="counts"><span class="animated fadeInDown"></span></div>
+                      </div>
+                      <div class="media-body">
+                        <h6>Approve Time</h6>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="panel panel-default tile">
+              <div class="panel-heading"><h3 class="panel-title">TRANSACTIONS</h3></div>
+              <div id="tableHover2">
+
+                <div class="table-responsive overflow" id="block-view-transactions-wrapper" style="overflow: hidden;" tabindex="5003">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th>Movement ID</th>
+                      <th>Issuer</th>
+                      <th>Instrument</th>
+                      <th>Key From</th>
+                      <th>Key To</th>
+                      <th>Protocol</th>
+                      <th>External Ref</th>
+                      <!--<th>Contingent</th>-->
+                      <th>Units</th>
+                      <th>Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="state-view-wrapper" class="page-wrapper">
+      <h4 class="page-title">STATE VIEW</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="tile" id="state-list-wrapper">
+              <h2 aria-controls="stateview-list-content-wrapper" aria-expanded="true" href="#stateview-list-content-wrapper" data-toggle="collapse"
+                  class="tile-title">Latest State Views</h2>
+              <div id="stateview-list-content-wrapper" class="list-group collapse" style="height: auto;">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="tile" id="asset-list-wrapper">
+              <h2 aria-controls="asset-list-content-wrapper" aria-expanded="true" href="#asset-list-content-wrapper" data-toggle="collapse" class="tile-title">
+                INSTRUMENT</h2>
+              <div class="sort-icon tile-title" style="text-align: right; padding:0px 10px"><i class="fa fa-sort-amount-asc"></i></div>
+              <div id="asset-list-content-wrapper" class="list-group collapse" style="height: auto;">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+
+            <div class="panel panel-default tile">
+              <div class="panel-heading"><h3 class="panel-title">ASSET DETAIL</h3></div>
+              <div id="tableHover3">
+                <div class="table-responsive overflow" id="state-view-assets-info-wrapper" style="overflow: hidden;" tabindex="5003">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th data-attr="address">Address <span class="sort-icon pull-right"><i class="fa fa-sort-amount-asc"></i></span>
+                      </td>
+                      <th data-attr="namespace">Issuer <span class="sort-icon pull-right"></span>
+                      </td>
+                      <th data-attr="asset">Instrument <span class="sort-icon pull-right"></span>
+                      </td>
+                      <th data-attr="certifier">Certifier <span class="sort-icon pull-right"></span>
+                      </td>
+                      <th data-attr="amount">Amount <span class="sort-icon pull-right"></span>
+                      </td>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="setting-page-wrapper" class="page-wrapper">
+      <h4 class="page-title">SETTINGS</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="row">
+          <div class="listview narrow tile col-md-6" id="paymentSystemSettingWrapper">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="CHAPS">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps1">
+                    <span><h6>CHAPS</h6></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="CREST">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps2">
+                    <span><h6>CREST</h6></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="whiter"/>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="CLS">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps3">
+                    <span><h6>CLS</h6></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="FPS">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps4">
+                    <span><h6>FPS</h6></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="whiter"/>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="BACS">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps5">
+                    <span><h6>BACS</h6></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="media">
+                  <div class="pull-left">
+                    <div class="make-switch" data-id="LINK">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <div class="media-body ps6">
+                    <span><h6>LINK</h6></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default tile">
+              <div class="panel-heading"><h3 class="panel-title">Chain ID : <span id="setting-chainID"></span></h3></div>
+            </div>
+
+            <div class="panel panel-default tile">
+              <div class="panel-heading"><h3 class="panel-title">Known Nodes</h3></div>
+              <div id="tableHover4">
+                <div class="table-responsive overflow" id="setting-page-know-hosts-wrapper" style="overflow: hidden;" tabindex="5003">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th>IP
+                      </td>
+                      <th>Port Number
+                      </td>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default tile">
+              <div class="panel-heading"><h3 class="panel-title">XChain Detail</h3></div>
+              <div id="tableHover5">
+                <div class="table-responsive overflow" id="setting-page-xchain-detail-wrapper" style="overflow: hidden;" tabindex="5003">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th>Chain ID
+                      </td>
+                      <th>Height
+                      </td>
+                      <th>Signing Nodes
+                      </td>
+                      <th>Parameter
+                      </td>
+                      <th>Status
+                      </td>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="example"></div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wallet-page-wrapper" class="page-wrapper">
+      <h4 class="page-title">WALLET</h4>
+
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="tab-container tile animated" id="wallet-page-transaction-wrapper">
+          <ul class="nav tab nav-tabs">
+            <li class="active"><a href="#corpactionTab">CORP ACTIONS</a></li>
+            <li><a href="#receivingTab">RECEIVING</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane" id="receivingTab">
+
+              <div class="row p-10 p-b-0" id="diary-tx-wrapper">
+                <div class="col-md-7 tile m-b-0 p-10">
+                  <button class="btn btn-lg diary-tx-btn" data-choice="coffee" data-toggle="tooltip" title="Fancy a coffee?"><span
+                      class="sa-side-coffee dairy-tx-icon"></span> Coffee
+                  </button>
+                  <button class="btn btn-lg diary-tx-btn" data-choice="brunch" data-toggle="tooltip" title="Fancy a brunch?"><span
+                      class="sa-side-restaurant dairy-tx-icon"></span> Lunch
+                  </button>
+                  <button class="btn btn-lg diary-tx-btn" data-choice="newspaper" data-toggle="tooltip" title="Fancy a newspaper?"><span
+                      class="sa-side-newspaper dairy-tx-icon"></span> News Paper
+                  </button>
+                </div>
+              </div>
+
+              <form class="p-10">
+                <div class="row">
+                  <div class="col-md-7 tile p-10 m-b-0">
+                    <div class="form-group m-b-15">
+                      <label>Issuer</label>
+                      <select class="select issuer-select">
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <div class="form-group m-b-15">
+                      <label>Security</label>
+                      <select class="select security-select">
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <div class="form-group m-b-15">
+                      <label>Address (To)</label>
+                      <select class="select toAddress-select">
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <div class="form-group m-b-15">
+                      <label>Amount</label>
+                      <input type="text" id='amount' class="input-sm form-control qty" placeholder="...">
+                    </div>
+
+                    <button class="btn btn-md m-r-5" id="generateQR">GENERATE QR CODE</button>
+                  </div>
+
+                  <div class="col-md-5">
+
+                    <div id='qrcode' class="p-l-10">
+                    </div>
+                  </div>
+
+                </div>
+
+              </form>
+              <div class="row p-10">
+                <div class="col-md-7 p-0">
+                  <div class="panel panel-default tile">
+                    <div class="panel-heading"><h3 class="panel-title">RECEIVING ADDRESS BALANCE</h3></div>
+                    <div id="tableHover4">
+                      <div class="table-responsive overflow" id="receiving-ad-bal-wrapper" style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="address">Address</th>
+                            <th data-attr="namespace">Issuer</th>
+                            <th data-attr="asset">Security</th>
+                            <th data-attr="balance">Balance</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane  active" id="corpactionTab">
+              <form class="p-10">
+                <div class="row">
+                  <div class="col-md-7 tile p-10 m-b-0">
+                    <div class="form-group m-b-15">
+                      <label>Issuer</label>
+                      <select class="select issuer-select" name="corp-issuer">
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <div class="form-group m-b-15">
+                      <label>Security</label>
+                      <select class="select security-select" name="corp-security">
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <!-- corp action type -->
+                    <div class="accordion" id="corp-action-wrapper">
+                      <div class="panel-group block panel" id="accordions">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">
+                              <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordions" href="#collapseSplit" for="split">
+                                STOCK SPLIT
+                              </a>
+                            </h3>
+                          </div>
+                          <div id="collapseSplit" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <div class="form-group col-md-4">
+                                <label class="col-md-8 control-label p-r-0" for="split-ratio">Ratio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 : </label>
+                                <div class="col-md-4 p-l-0">
+                                  <input type="text" id="split-ratio" class="form-control input-sm">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default" style="overflow:visible">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordions" href="#collapseDividend" for="dividend">
+                                DIVIDEND
+                              </a>
+                            </h3>
+                          </div>
+                          <div id="collapseDividend" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+                              <div class="form-group col-md-4">
+                                <label class="col-md-3 control-label p-r-0" for="split-ratio">Currency</label>
+                                <div class="col-md-6">
+                                  <select class="select" id="dividend-currency">
+                                    <option>AUD</option>
+                                    <option>GBP</option>
+                                    <option>JPY</option>
+                                    <option>EUR</option>
+                                    <option>USD</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label class="col-md-3 control-label p-r-0" for="split-ratio">Amount</label>
+                                <div class="col-md-6">
+                                  <input type="text" id="dividend-amount" class="form-control input-sm">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-info btn-sm m-t-10" type="submit" id="sendCorpBtn">Commit</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </form>
+              <div class="row p-10">
+                <div class="col-md-7 p-0">
+                  <div class="panel panel-default tile">
+                    <div class="panel-heading"><h3 class="panel-title">ADDRESS BALANCE</h3></div>
+                    <div id="tableHover6">
+                      <div class="table-responsive overflow" id="corp-ad-bal-wrapper" style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="address">Address
+                            </td>
+                            <th data-attr="namespace">Issuer
+                            </td>
+                            <th data-attr="asset">Security
+                            </td>
+                            <th data-attr="balance">Balance
+                            </td>
+                            <th data-attr="currency" class="dividend-show">Currency
+                            </td>
+                            <th data-attr="currency-bl" class="dividend-show">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!--                                    <div class="tab-pane" id="sendingTab">-->
+            <!--                                        <form  class="m-t-10 p-10">-->
+            <!--                                            <div class="row">-->
+            <!--                                                <div class="col-md-7 tile p-10">-->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>Issuer</label>-->
+            <!--                                                        <select class="select issuer-select">-->
+            <!--                                                            <option></option>-->
+            <!--                                                        </select>-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>Security</label>-->
+            <!--                                                        <select class="select security-select">-->
+            <!--                                                            <option></option>-->
+            <!--                                                        </select>-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>Address (To)</label>-->
+            <!--                                                        <select class="select toAddress-select">-->
+            <!--                                                            <option></option>-->
+            <!--                                                        </select>-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>Address (From)</label>-->
+            <!--                                                        <select class="select fromAddress-select">-->
+            <!--                                                            <option></option>-->
+            <!--                                                        </select>-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>Amount</label>-->
+            <!--                                                        <input type="text" id='amount' class="input-sm form-control" placeholder="...">-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <div class="form-group m-b-15">-->
+            <!--                                                        <label>PIN</label>-->
+            <!--                                                        <input type="password" class="input-sm  form-control" name="pin" placeholder="">-->
+            <!--                                                    </div>-->
+            <!---->
+            <!--                                                    <button class="btn btn-md m-r-5" id="send-transaction" >SEND</button>-->
+            <!--                                                </div>-->
+            <!---->
+            <!--                                            </div>-->
+            <!---->
+            <!--                                            <div class="row">-->
+            <!--                                                <div class="col-md-7 p-0">-->
+            <!--                                                    <div class="panel panel-default ">-->
+            <!--                                                        <div class="panel-heading"><h3 class="panel-title">SENDING ADDRESS BALANCE</h3></div>-->
+            <!--                                                        <div id="tableHover5">-->
+            <!--                                                            <div class="table-responsive overflow" id="sending-ad-bal-wrapper" style="overflow: hidden;" tabindex="5003">-->
+            <!--                                                                <table class="table table-bordered table-hover">-->
+            <!--                                                                    <thead>-->
+            <!--                                                                    <tr>-->
+            <!--                                                                        <th data-attr="address">Address</td>-->
+            <!--                                                                        <th data-attr="namespace">Issuer</td>-->
+            <!--                                                                        <th data-attr="asset">Security</td>-->
+            <!--                                                                        <th data-attr="balance">Balance</td>-->
+            <!--                                                                    </tr>-->
+            <!--                                                                    </thead>-->
+            <!--                                                                    <tbody></tbody>-->
+            <!--                                                                </table>-->
+            <!--                                                            </div>-->
+            <!--                                                        </div>-->
+            <!--                                                    </div>-->
+            <!--                                                </div>-->
+            <!--                                            </div>-->
+            <!---->
+            <!--                                        </form>-->
+            <!--                                    </div>-->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contract-page-wrapper" class="page-wrapper">
+      <h4 class="page-title">CONTRACT</h4>
+
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="tab-container tile animated" id="contract-page-main-wrapper">
+          <ul class="nav tab nav-tabs">
+            <li class="active"><a href="#dvp-smartContractTab">DVP UK</a></li>
+            <li><a href="#single-clearingTab">SINGLE ASSET CLEARING</a></li>
+            <li><a href="#multi-clearingTab">MULTI ASSET CLEARING</a></li>
+          </ul>
+
+          <div class="tab-content">
+
+            <div class="tab-pane active" id="dvp-smartContractTab">
+              <button class="btn btn-md m-b-10 new-contract">NEW CONTRACT</button>
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="dvp-new-contract-wrapper" class="">
+                    <div class="tile block-area p-0">
+
+                      <form class="form-inline" role="form">
+                        <div class="block-area" id="dvp-contract-wrapper-a">
+                          <div><h3 class="block-title"><b>PARTY A</b>:</h3>&nbsp;&nbsp;<span class="addr"></span></div>
+                          <div class="row p-b-5">
+                            <div class="col-md-6">
+                              <b>Instrument</b>
+                            </div>
+                            <div class="col-md-6">
+                              <b>Quantity</b>
+                            </div>
+                          </div>
+                          <div class="row p-b-5">
+                            <div class="form-group col-md-6">
+                              <select class="select instrument-select instrument1 partyA">
+                                <option value=""></option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control input-sm qty1 qty" placeholder="Quantity">
+                            </div>
+                          </div>
+                          <!--                                                            <div class="row p-b-5">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument2 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty2" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                          <!--                                                            <div class="row">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument3 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty3" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                        </div>
+
+                        <div class="block-area" id="dvp-contract-wrapper-b">
+                          <div><h3 class="block-title"><b>PARTY B</b>:</h3>&nbsp;&nbsp;<span class="addr"></span></div>
+                          <div class="row p-b-5">
+                            <div class="col-md-6">
+                              <b>Instrument</b>
+                            </div>
+                            <div class="col-md-6">
+                              <b>Quantity</b>
+                            </div>
+                          </div>
+                          <div class="row p-b-5">
+                            <div class="form-group col-md-6">
+                              <select class="select instrument-select instrument1 partyA">
+                                <option value=""></option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control input-sm qty1 qty" placeholder="Quantity">
+                            </div>
+                          </div>
+                          <!--                                                            <div class="row p-b-5">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument2 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty2" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                          <!--                                                            <div class="row">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument3 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty3" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                        </div>
+
+                        <div class="block-area" id="dvp-contract-wrapper-c">
+                          <div><h3 class="block-title"><b>PARTY C (TAX)</b>:</h3>&nbsp;&nbsp;<span class="addr"></span></div>
+                          <div class="row p-b-5">
+                            <div class="col-md-6">
+                              <b>Instrument</b>
+                            </div>
+                            <div class="col-md-6">
+                              <b>Quantity</b>
+                            </div>
+                          </div>
+                          <div class="row p-b-5">
+                            <div class="form-group col-md-6">
+                              <select class="select instrument-select instrument1 partyC" disabled>
+                                <option value=""></option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control input-sm qty1 qty" placeholder="Quantity" readonly>
+                            </div>
+                          </div>
+                          <!--                                                            <div class="row p-b-5">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument2 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty2" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                          <!--                                                            <div class="row">-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <select class="select instrument-select instrument3 partyA">-->
+                          <!--                                                                        <option value=""></option>-->
+                          <!--                                                                    </select>-->
+                          <!--                                                                </div>-->
+                          <!--                                                                <div class="form-group col-md-6">-->
+                          <!--                                                                    <input type="text" class="form-control input-sm qty3" placeholder="Quantity">-->
+                          <!--                                                                </div>-->
+                          <!--                                                            </div>-->
+                        </div>
+
+                        <div class="block-area p-b-20">
+                          <button type="submit" class="btn btn-sm">CREATE</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <div id="dvp-existing-contract-wrapper" class="hidden" data-id="">
+
+                    <div class="block-area tile">
+                      <div class="panel panel-default tile">
+                        <div class="panel-heading wbb"><h6 class="panel-title">Contract:&nbsp;&nbsp;<span class="contract-addr"></span></h6></div>
+                        <div id="dvp-partA" class="p-b-5" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="1">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY A</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="dvp-partB" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="2">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY B</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="dvp-partC" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="media-body">
+                                <h6>PARTY C ( TAX )</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th></th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div class="panel-footer">
+                          <h3 class="panel-title">STATUS: <span id="dvp-contract-status" class="p-5">PENDING</span></h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="block-area tile" id="dvp-contract-raw-view-wrapper">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-default tile" id="dvp-parta-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY A</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <select class="select address-select partyA">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="dvp-contract-ad-bal-wrapper-a"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="dvp-partb-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY B</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <select class="select address-select partyB">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="dvp-contract-ad-bal-wrapper-b"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile hidden" id="dvp-partc-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY C ( TAX )</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <select class="select address-select partyC" disabled>
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="dvp-contract-ad-bal-wrapper-c"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="tab-pane ac-wrapper" id="single-clearingTab">
+              <button class="btn btn-md m-b-10 new-contract" data-contract-type="sac">NEW CONTRACT</button>
+              <div class="row" id="sac-new-contract-main-wrapper">
+                <div class="col-md-8">
+                  <form role="form">
+                    <div id="sac-new-contract-wrapper" class="tile p-10 ac-new-contract-wrapper">
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY A</h3>
+                        </div>
+
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">PAYING</h3>
+                        </div>
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">RECEIVING</h3>
+                        </div>
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">AVAILABLE</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyA party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <select class="select instrument-select instru">
+                              <option value=""></option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY B</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyB party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY C</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyC party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY D</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyD party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn-sm new-contract" data-parent-wrapper="#sac-new-contract-wrapper" data-contract-type="sac">CREATE
+                      </button>
+
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default tile address-select-wrapper" id="sac-address-select-wrapper">
+                    <div class="panel-heading wbb"><h6 class="panel-title">ADDRESS</h6></div>
+
+                    <div class="row p-10">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY A : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyA" data-type="sac" data-party="#sac-parta-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY B : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyB" data-type="sac" data-party="#sac-partb-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY C : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyC" data-type="sac" data-party="#sac-partc-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY D : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyD" data-type="sac" data-party="#sac-partd-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row hidden" id="sac-existing-contract-main-wrapper">
+                <div class="col-md-6">
+
+                  <div id="sac-existing-contract-wrapper" data-id="">
+
+                    <div class="block-area tile">
+                      <div class="panel panel-default tile">
+                        <div class="panel-heading wbb"><h6 class="panel-title">Contract:&nbsp;&nbsp;<span class="contract-addr"></span></h6></div>
+                        <div id="sac-partA" class="p-b-5" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="1" data-contract-type="sac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY A</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="sac-partB" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="2" data-contract-type="sac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY B</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="sac-partC" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="3" data-contract-type="sac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY C</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="sac-partD" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="4" data-contract-type="sac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY D</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div class="panel-footer">
+                          <h3 class="panel-title">STATUS: <span id="sac-contract-status" class="p-5">PENDING</span></h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="block-area tile" id="sac-contract-raw-view-wrapper">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" id="sac-bl-wrapper">
+                  <div class="panel panel-default tile" id="sac-parta-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY A</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control input-sm partyA" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="sac-contract-ad-bal-wrapper-a"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="sac-partb-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY B</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyB" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="sac-contract-ad-bal-wrapper-b"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="sac-partc-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY C</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyC" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="sac-contract-ad-bal-wrapper-c"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="sac-partd-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY D</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyD" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="sac-contract-ad-bal-wrapper-d"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="tab-pane ac-wrapper" id="multi-clearingTab">
+              <button class="btn btn-md m-b-10 new-contract" data-contract-type="mac">NEW CONTRACT</button>
+              <div class="row" id="mac-new-contract-main-wrapper">
+                <div class="col-md-8">
+                  <form role="form">
+                    <div id="mac-new-contract-wrapper" class="tile p-10 ac-new-contract-wrapper">
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY A</h3>
+                        </div>
+
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">PAYING</h3>
+                        </div>
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">RECEIVING</h3>
+                        </div>
+                        <div class="col-md-3">
+                          <h3 class="block-title no-background p-l-0">AVAILABLE</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyA party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <select class="select instrument-select instru">
+                              <option value=""></option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="2">
+                          <div class="form-group col-md-3">
+                            <select class="select instrument-select instru">
+                              <option value=""></option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty " data-party=".partyA" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="3">
+                          <div class="form-group col-md-3">
+                            <select class="select instrument-select instru">
+                              <option value=""></option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyA" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY B</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyB party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="2">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="3">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyB" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY C</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyC party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="2">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="3">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyC" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10">
+                        <div class="col-md-3">
+                          <h3 class="block-title">PARTY D</h3>
+                        </div>
+                      </div>
+
+                      <div class="row m-b-10 partyD party-wrapper" data-addr="">
+                        <div class="instrument-wrapper" data-instru-id="1">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="2">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+
+                        <div class="instrument-wrapper" data-instru-id="3">
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm instru" readonly>
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="pay">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <input type="text" class="form-control input-sm qty" data-party=".partyD" data-type="receive">
+                          </div>
+
+                          <div class="form-group col-md-3">
+                            <h3 class="block-title bl-wrap instru-bal"></h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn-sm new-contract" data-parent-wrapper="#mac-new-contract-wrapper" data-contract-type='mac'>CREATE
+                      </button>
+
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default tile address-select-wrapper" id="mac-address-select-wrapper">
+                    <div class="panel-heading wbb"><h6 class="panel-title">ADDRESS</h6></div>
+
+                    <div class="row p-10">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY A : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyA" data-type="mac" data-party="#mac-parta-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY B : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyB" data-type="mac" data-party="#mac-partb-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY C : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyC" data-type="mac" data-party="#mac-partc-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row p-10 p-t-0">
+                      <div class="form-group col-md-4">
+                        <h3 class="block-title">PARTY D : </h3>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <select class="select address-select partyD" data-type="mac" data-party="#mac-partd-bl-wrapper">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row hidden" id="mac-existing-contract-main-wrapper">
+                <div class="col-md-6">
+
+                  <div id="mac-existing-contract-wrapper" data-id="">
+
+                    <div class="block-area tile">
+                      <div class="panel panel-default tile">
+                        <div class="panel-heading wbb"><h6 class="panel-title">Contract:&nbsp;&nbsp;<span class="contract-addr"></span></h6></div>
+                        <div id="mac-partA" class="p-b-5" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="1" data-contract-type="mac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY A</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="mac-partB" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="2" data-contract-type="mac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY B</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="mac-partC" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="3" data-contract-type="mac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY C</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div id="mac-partD" data-id="">
+                          <div class="listview narrow wbb">
+                            <div class="media">
+                              <div class="pull-right">
+                                <div class="commited all">
+                                  <button type="submit" class="btn btn-sm" data-id="4" data-contract-type="mac">COMMIT</button>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h6>PARTY D</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive overflow wbb" style="overflow: hidden;" tabindex="5003">
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>Instrument</th>
+                                <th>Quantity</th>
+                                <th>Committed</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        <div class="panel-footer">
+                          <h3 class="panel-title">STATUS: <span id="mac-contract-status" class="p-5">PENDING</span></h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="block-area tile" id="mac-contract-raw-view-wrapper">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" id="mac-bl-wrapper">
+                  <div class="panel panel-default tile" id="mac-parta-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY A</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control input-sm partyA" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="mac-contract-ad-bal-wrapper-a"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="mac-partb-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY B</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyB" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="mac-contract-ad-bal-wrapper-b"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="mac-partc-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY C</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyC" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="mac-contract-ad-bal-wrapper-c"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel panel-default tile" id="mac-partd-bl-wrapper">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h3 class="panel-title"><b>PARTY D</b></h3>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <input type="text" class="form-control input-sm partyD" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-wrapper">
+                      <div class="table-responsive overflow" id="mac-contract-ad-bal-wrapper-d"
+                           style="overflow: hidden;" tabindex="5003">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+                            <th data-attr="instrument">Instrument
+                            </td>
+                            <th data-attr="bal">Balance
+                            </td>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="log-page-wrapper" class="page-wrapper">
+      <h4 class="page-title">LOG & DIAGNOSIS</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div class="tab-container tile">
+          <ul class="nav tab nav-tabs">
+            <li class="active"><a href="#log-tab-pane">Log</a></li>
+            <li><a href="#diagnosis-tab-pane">Diagnosis</a></li>
+            <li><a href="#overdrive-tab-pane">Over Drive</a></li>
+            <li><a href="#txdiagnosis-tab-pane">TX Diagnosis</a></li>
+            <li><a href="#stateviewdiagnosis-tab-pane">State View Diagnosis</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="log-tab-pane">
+              <div class="row">
+                <div class="listview narrow tile col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_stateView">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>StateView</h6></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_scenario">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Scenario</h6></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="whiter">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_validate">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Validate</h6></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_webSockets">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>WebSockets</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="whiter">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_messaging">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Messaging</h6></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_voting">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Voting</h6></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="whiter">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_functions">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Functions</h6></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_critical">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Critical</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="whiter">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <div class="pull-left">
+                          <div class="make-switch" data-id="log_area_proposal">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <span><h6>Proposal</h6></span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <hr class="whiter">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="media">
+                        <label><h6>Log Level</h6></label>
+                        <select class="select" id="log-level-selector">
+                          <option value="default">Default</option>
+                          <option value="level1">Level 1</option>
+                          <option value="level2">Level 2</option>
+                          <option value="level3">Level 3</option>
+                          <option value="level4">Level 4</option>
+                          <option value="level5">Level 5</option>
+                          <option value="levelTop">Level Top</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="diagnosis-tab-pane">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="make-switch" id="receiveStatusUpdateSwitch" data-text-label="<h6>Update</h6>" data-on-label="<i class='fa fa-check'></i>"
+                       data-off-label="<i class='fa fa-times'></i>">
+                    <input type="checkbox">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="diagnosis-data-wrapper">
+                    <div><h6 class="p-5">DATA DETAIL</h6></div>
+                    <div class="row">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="tab-pane" id="overdrive-tab-pane">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="make-switch" id="overdriveSwitch" data-on-label="ON" data-off-label="OFF">
+                    <input type="checkbox">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="p-relative col-md-3">
+                  <input type="text" class="form-control input-sm spinedit" id="overdriveSpiner"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="txdiagnosis-tab-pane">
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn m-r-5" data-command="dump">Dump Current TX Pool</button>
+                  <div class="row">
+                    <div class="checkbox col-md-6">
+                      <label>
+                        <input type="checkbox" id="isloadAllTXs">
+                        Load All TXs
+                      </label>
+                    </div>
+                    <div class="checkbox col-md-6">
+                      <label>
+                        <input type="checkbox" id="isPopulate">
+                        Populate TXs Pool
+                      </label>
+                    </div>
+                  </div>
+
+
+                  <div class="listview list-container  m-b-10">
+                    <header class="listview-header media">
+                      Dumped TX Files&nbsp;
+                      <i class="fa fa-refresh" onclick="sendCommandToDumpedTxList(2)"></i>
+                    </header>
+                    <div id="dumpedTxListWrapper">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div id="tableHover20" class="col-md-12">
+
+                  <div class="tile p-5">Number of TXs in the Pool: <span class="txcount">0</span></div>
+
+                  <div class="table-responsive overflow" id="" style="overflow: hidden;" tabindex="5003">
+                    <table class="table table-bordered table-hover tile">
+                      <thead>
+                      <tr></tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="stateviewdiagnosis-tab-pane">
+
+              <div class="panel panel-default tile">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><b>DATA TO DUMP</b></h3>
+                </div>
+                <div class="p-10">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="config">
+                        config
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="chainid">
+                        chainid
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="p2p">
+                        p2p
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="wallet">
+                        wallet
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="checkContractsCounter">
+                        checkContractsCounter
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="TXPOOL">
+                        TXPOOL
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="pendingTXToSend_original">
+                        pendingTXToSend_original
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="pendingTXToSend_forward">
+                        pendingTXToSend_forward
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="PROPOSALPOOL">
+                        PROPOSALPOOL
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="PENDINGPROPOSALPOOL">
+                        PENDINGPROPOSALPOOL
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="lastGenerateProposal">
+                        lastGenerateProposal
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="lastProposalSelectedSignage">
+                        lastProposalSelectedSignage
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="lastValidProposalTimestamp">
+                        lastValidProposalTimestamp
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="networkPreparingProposal">
+                        networkPreparingProposal
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="ProposalCount">
+                        ProposalCount
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="ProposalTimeLast">
+                        ProposalTimeLast
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="ProposalTime">
+                        ProposalTime
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="ProposalHeight">
+                        ProposalHeight
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="signodebalancetotal">
+                        signodebalancetotal
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="BlockReporting">
+                        BlockReporting
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="websocketPendingProposal">
+                        websocketPendingProposal
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="websocketReportingTXList">
+                        websocketReportingTXList
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="websocketReportingTXTime">
+                        websocketReportingTXTime
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="websocketSizingData">
+                        websocketSizingData
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="VOTESPOOL">
+                        VOTESPOOL
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="SIGNATUREPOOL">
+                        SIGNATUREPOOL
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="PASTBLOCKS">
+                        PASTBLOCKS
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="FUTUREBLOCKS">
+                        FUTUREBLOCKS
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="RECENTTX">
+                        RECENTTX
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="LASTVOTE">
+                        LASTVOTE
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="LASTSIGNATURE">
+                        LASTSIGNATURE
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="height">
+                        height
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="networkheight">
+                        networkheight
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="SIGNINGON">
+                        SIGNINGON
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="blocksrequestwatermark">
+                        blocksrequestwatermark
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="networkstate">
+                        networkstate
+                      </label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="proposalstate">
+                        proposalstate
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="RECENTREQUESTS">
+                        RECENTREQUESTS
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="verifier">
+                        verifier
+                      </label>
+                    </div>
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="verifier_vote">
+                        verifier_vote
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" checked data-name="CurrentHeightStateList">
+                        CurrentHeightStateList
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="panel-footer">
+                  <button class="btn btn-sm" onclick="$('#stateviewdiagnosis-tab-pane input').iCheck('check'); ">Select All</button>
+                  <button class="btn m-l-5 btn-sm" onclick="$('#stateviewdiagnosis-tab-pane input').iCheck('uncheck'); ">Unselect All</button>
+                  <button class="btn m-l-5 btn-sm dump-sv" data-command="dump">Dump</button>
+                </div>
+
+                <div class="listview list-container  m-t-10">
+                  <header class="listview-header media">
+                    Dumped SV Files&nbsp;
+                    <i class="fa fa-refresh" onclick="sendCommandToDumpedSvList(2)"></i>
+                  </header>
+                  <div id="dumpedSvListWrapper">
+                  </div>
+                </div>
+
+                <div class="panel-heading m-t-10">
+                  <h3 class="panel-title"><b>DATA VIEW</b></h3>
+                </div>
+                <div id="dumpedSvDataView" class="p-10">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="theme-page-wrapper" class="page-wrapper">
+      <h4 class="page-title">Theme Options</h4>
+      <hr class="whiter"/>
+
+      <div class="block-area">
+        <div id="themeSetting"></div>
+      </div>
+    </section>
+  </section>
+
+</section>
+
+<!-- Older IE Message -->
+<!--[if lt IE 9]>
+<div class="ie-block">
+  <h1 class="Ops">Ooops!</h1>
+  <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser in order to access the maximum functionality of this
+    website. </p>
+  <ul class="browsers">
+    <li>
+      <a href="https://www.google.com/intl/en/chrome/browser/">
+        <img src="img/browsers/chrome.png" alt="">
+        <div>Google Chrome</div>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.mozilla.org/en-US/firefox/new/">
+        <img src="img/browsers/firefox.png" alt="">
+        <div>Mozilla Firefox</div>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.opera.com/computer/windows">
+        <img src="img/browsers/opera.png" alt="">
+        <div>Opera</div>
+      </a>
+    </li>
+    <li>
+      <a href="http://safari.en.softonic.com/">
+        <img src="img/browsers/safari.png" alt="">
+        <div>Safari</div>
+      </a>
+    </li>
+    <li>
+      <a href="http://windows.microsoft.com/en-us/internet-explorer/downloads/ie-10/worldwide-languages">
+        <img src="img/browsers/ie.png" alt="">
+        <div>Internet Explorer(New)</div>
+      </a>
+    </li>
+  </ul>
+  <p>Upgrade your browser for a Safer and Faster web experience. <br/>Thank you for your patience...</p>
+</div>
+<![endif]-->
+</section>
+
+<!-- Javascript Libraries -->
+<!-- jQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> <!-- jQuery Library -->
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script> <!-- jQuery UI -->
+
+<script src="js/jquery.easing.1.3.js"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+<script type="text/javascript" src="includes/jquery.qrcode.min.js"></script>
+
+<!-- Bootstrap -->
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+<script src="js/charts/jquery.flot.orderBar.js"></script> <!-- Flot Bar chart -->
+<script src="js/charts/jquery.flot.pie.min.js"></script> <!-- Flot Pie chart -->
+
+<script src="js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script> <!-- All the above chart related functions -->
+
+<!-- Map -->
+<script src="js/maps/jvectormap.min.js"></script> <!-- jVectorMap main library -->
+<!--        <script src="js/maps/usa.js"></script> <!-- USA Map for jVectorMap -->
+<script src="js/maps/world.js"></script> <!-- World Map for jVectorMap -->
+
+<!--  Form Related -->
+<script src="js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+<script src="js/select.min.js"></script> <!-- Custom Select -->
+<script src="js/spinner.min.js"></script> <!-- Spinner -->
+
+<!--twitter timeline parser-->
+<script src="javascript/twitter-entities.js"></script> <!-- Spinner -->
+
+<!-- UX -->
+<script src="js/scroll.min.js"></script> <!-- Custom Scrollbar -->
+
+<!-- Other -->
+<!--        <script src="js/calendar.min.js"></script> <!-- Calendar -->
+<script src="js/feeds.min.js"></script> <!-- News Feeds -->
+<script src="js/toggler.min.js"></script> <!-- Toggler -->
+
+<!--modal dialog-->
+<script src="js/bootstrap-dialog.min.js"></script>
+
+<!--jsontree plugin-->
+<script src="js/jsontree.js"></script>
+
+<!--jquery mobile event-->
+<script>
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    $(function () {
+      $('[data-toggle=tooltip]').tooltip('destroy')
+    }); //disable tooptip for mobile device.
+  }
+
+</script>
+
+<!-- Generate bitcoin address. -->
+<script src="js/bitcoinjs.min.js"></script>
+
+
+<!-- All JS functions -->
+<script src="js/functions.js"></script>
+<script src="js/gibberish-aes-1.0.0.min.js"></script>
+<script src="js/bigint.js"></script>
+<script src="javascript/socket.js"></script>
+<script src="javascript/jsxcompressor/jsxcompressor.min.js"></script>
+
+<script src="javascript/mod_utility.js"></script>
+
+<!-- Custom -->
+<script src="javascript/mod_helper_functions.js"></script>
+<script src="javascript/mod_init.js"></script>
+<script src="javascript/mod_painttodom.js"></script>
+<script src="javascript/mod_manage_data.js"></script>
+<script src="javascript/main.js"></script>
+<script src="javascript/changeTheme.js"></script>
+
+
+</body>
+</html>

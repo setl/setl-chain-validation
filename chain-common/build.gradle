@@ -1,0 +1,23 @@
+dependencies {
+  compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+  compile group: 'io.setl', name: 'passwd-common', version: setlPasswdCommon
+  compile group: 'io.setl', name: 'setl-commons', version: setlCommons
+
+  compile group: 'org.bouncycastle', name: 'bcprov-debug-jdk15on', version: bouncyCastleVersion
+  compile group: 'org.bouncycastle', name: 'bctls-jdk15on', version: bouncyCastleVersion
+  compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+  compile group: 'org.jetbrains', name: 'annotations', version: '19.0.0'
+  compile group: 'com.pippsford', name: 'SecurePRNG-core', version: prngVersion
+  testCompile group: 'com.google.jimfs', name: 'jimfs', version: '1.1'
+  testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+  compile group: 'org.msgpack', name: 'msgpack-core', version: messagePackVersion
+  compile "io.setl.json-simple:json-simple:1.2.3"
+  compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: springBootVersion
+}
+
+configurations.all {
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}

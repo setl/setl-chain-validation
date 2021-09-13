@@ -1,0 +1,560 @@
+{
+  "keyDigestType": "SHA-512/256",
+  "version": 5,
+  "metadata": {
+    "blockHash": null,
+    "chainId": 30,
+    "height": 3,
+    "timestamp": 1581549965
+  },
+  "management": {
+    "configuration": {
+      "preferredDigestType": 2,
+      "registeraddresses": true
+    },
+    "privilegedKeys": {
+      "configurationManager": {
+        "address": "BMco2R6SFtN0PKznLsXwePT-UOdf6Hq1yA",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b8104002303818600040193b127167db3e34835f90e5326c1040021b757983dc174af770abb5f9450c19f1b5508c0a9515e6493411eeede4f9aefe3158fb41733b2e67ebd7e5acfd63e3fc80117201beda08a0af12d37a26d3de1ca53ff69d73e1b8549e7937c7cd8efc6c360832b519d0ebac2389bc149d4448f0e6a39a28db2b050651feca5b87cb9cca09227",
+        "name": "configurationManager",
+        "permissions": [
+          "Change Configuration"
+        ]
+      },
+      "issuerOfStake": {
+        "address": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b81040023038186000401d9551437d6fdf9de8d263ce519cbd145c3e77ef0fd7beaae38554f2e7a517737003e3979423b06bf282b7f49a07af0117359c54961c0fee92cd31c08ada763f8d1014413ba85e4a1aae778114375fa0e23a8e3556fcf901484419c7aac2b6b07e63af0bdce52087780e2fe5df85aa37cca3eadbd14a9d3980291312a03e2175703baf0",
+        "name": "issuerOfStake",
+        "permissions": [
+          "Issue Stake"
+        ]
+      },
+      "upgradeManager": {
+        "address": "BH4F4xovV8NmkYOtcGVYQ0kJ1Lg6UWLjog",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b81040023038186000400a5db6be5f0e26075cbdec2ff65393586357ac8551c638b61b8b40a38742e31dbffa84098a4ff98c58e0f91ad95406f8d99ba9710d233a6904dfb6a3cb4ffb729e600a819c36b0f40c434aec0136ec095667491845d302e1403f070802d203d3e59e1ba0335c4d79997bbf96d5b075299e04cc5c780881453710852cbfec48c7533838c",
+        "name": "upgradeManager",
+        "permissions": [
+          "Apply Upgrade"
+        ]
+      },
+      "userManager": {
+        "address": "BAoweTcEpCa4lPBMXvhoPWkWXU82eJszfw",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b810400230381860004000ec889c7d7bc27152c37b6ca061d3e4737fd1c9207db1210be27a8a7b507a92e95e8967c821e108e457c736730f8b847c67f1046dfc5b08358c718a99dab76945a000de505cda51e3c9c5d74619cbb61e4b9e9499fe1955a6ebb8081804f28cbc2b37b40b5f1448f4517c3b0b60ed9fec83f85510a78e3159331c1994411150e6a4437",
+        "name": "userManager",
+        "permissions": [
+          "Create Privileged User",
+          "Modify Privileged User"
+        ]
+      }
+    },
+    "crossChainDetails": {},
+    "validationNodes": [
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004b852ddc728b5b8d3e71fb3ca1ffb3d79f5b875b039611198ac72d893bfdaac9a7e99b0ceac759bcbe6cf944524ed2211862d52fd532e1b865246d51f350a6fe9",
+        "returnAddress": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004b852ddc728b5b8d3e71fb3ca1ffb3d79f5b875b039611198ac72d893bfdaac9a7e99b0ceac759bcbe6cf944524ed2211862d52fd532e1b865246d51f350a6fe9",
+        "updateHeight": -1
+      },
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d0301070342000452235aad4701d20c5d56773495f9ea2bdb0acaa88d9479ee4f90aca729bd52a17eeebc6130785422da086965f7b0cedc48e51a1c7e6af34d6ec5aab9bed2a5e3",
+        "returnAddress": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d0301070342000452235aad4701d20c5d56773495f9ea2bdb0acaa88d9479ee4f90aca729bd52a17eeebc6130785422da086965f7b0cedc48e51a1c7e6af34d6ec5aab9bed2a5e3",
+        "updateHeight": -1
+      },
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004cac307eabb105e4c464140bda47d6d302e3377cc37d98de32039119ff631222d1f36f7d3691acc3ff7e91afdc589e5fdfdaee201c6fbb41317084ab6325b8a79",
+        "returnAddress": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004cac307eabb105e4c464140bda47d6d302e3377cc37d98de32039119ff631222d1f36f7d3691acc3ff7e91afdc589e5fdfdaee201c6fbb41317084ab6325b8a79",
+        "updateHeight": -1
+      }
+    ]
+  },
+  "merkles": {
+    "io.setl.bc.json.data.DataDocument": [
+      {
+        "document": {
+          "text": "Hello, World!",
+          "author": "Brian Kernighan",
+          "published": [
+            1967,
+            1974,
+            1978
+          ]
+        },
+        "id": [
+          "test-1",
+          "document-hello-world"
+        ],
+        "aclId": [
+          "",
+          ""
+        ],
+        "lastModified": 1581549995,
+        "metadata": "Test document",
+        "salt": "x",
+        "title": "My first JSON Document",
+        "updateHeight": 3,
+        "validatorId": [
+          "",
+          ""
+        ]
+      }
+    ],
+    "io.setl.bc.json.data.DataNamespace": [
+      {
+        "defaultAclId": [
+          "",
+          ""
+        ],
+        "defaultValidator": [
+          "",
+          ""
+        ],
+        "id": "test-1",
+        "lastModified": 1581549995,
+        "metadata": "",
+        "privileges": {
+          "createAcl": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "createDocument": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "createRole": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "createValidator": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "deleteAcl": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "deleteAclRole": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "deleteNamespace": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "deleteValidator": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "forceDelete": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "readAcl": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "readDescription": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "readNamespace": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "readRole": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "readValidator": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "updateAcl": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "updateDescription": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "updateNamespace": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ],
+          "updateRole": [
+            "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+          ]
+        },
+        "title": "My first JSON Data namespace",
+        "updateHeight": 3
+      }
+    ],
+    "io.setl.bc.json.data.DocumentValidator": [
+      {
+        "algorithm": "json-schema",
+        "configuration": {
+          "schema": {
+            "$id": "http://example.com/root.json",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": {},
+            "properties": {
+              "c": {
+                "$id": "#/properties/c",
+                "properties": {
+                  "a": {
+                    "$id": "#/properties/c/properties/a",
+                    "items": {
+                      "$id": "#/properties/c/properties/a/items",
+                      "default": 0,
+                      "examples": [
+                        0,
+                        1
+                      ],
+                      "title": "The Items Schema",
+                      "type": "integer"
+                    },
+                    "title": "The A Schema",
+                    "type": "array"
+                  },
+                  "o": {
+                    "$id": "#/properties/c/properties/o",
+                    "properties": {
+                      "x": {
+                        "$id": "#/properties/c/properties/o/properties/x",
+                        "default": "",
+                        "examples": [
+                          "y"
+                        ],
+                        "pattern": "^(.*)$",
+                        "title": "The X Schema",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "x"
+                    ],
+                    "title": "The O Schema",
+                    "type": "object"
+                  },
+                  "v": {
+                    "$id": "#/properties/c/properties/v",
+                    "default": false,
+                    "examples": [
+                      true
+                    ],
+                    "title": "The V Schema",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "a",
+                  "o",
+                  "v"
+                ],
+                "title": "The C Schema",
+                "type": "object"
+              },
+              "d": {
+                "$id": "#/properties/d",
+                "properties": {
+                  "unwanted": {
+                    "$id": "#/properties/d/properties/unwanted",
+                    "default": false,
+                    "examples": [
+                      true
+                    ],
+                    "title": "The Unwanted Schema",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "unwanted"
+                ],
+                "title": "The D Schema",
+                "type": "object"
+              },
+              "r": {
+                "$id": "#/properties/r",
+                "properties": {
+                  "v": {
+                    "$id": "#/properties/r/properties/v",
+                    "default": "",
+                    "examples": [
+                      "Hello, World"
+                    ],
+                    "pattern": "^(.*)$",
+                    "title": "The V Schema",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "v"
+                ],
+                "title": "The R Schema",
+                "type": "object"
+              },
+              "u": {
+                "$id": "#/properties/u",
+                "properties": {
+                  "a": {
+                    "$id": "#/properties/u/properties/a",
+                    "title": "The A Schema",
+                    "type": "array"
+                  },
+                  "o": {
+                    "$id": "#/properties/u/properties/o",
+                    "title": "The O Schema",
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "a",
+                  "o"
+                ],
+                "title": "The U Schema",
+                "type": "object"
+              }
+            },
+            "required": [
+              "c",
+              "r",
+              "u",
+              "d"
+            ],
+            "title": "The Root Schema",
+            "type": "object"
+          }
+        },
+        "id": [
+          "test-1",
+          "validator-1"
+        ],
+        "lastModified": 1581549995,
+        "metadata": "",
+        "title": "Simple schema validator",
+        "updateHeight": 3
+      }
+    ],
+    "io.setl.bc.json.data.acl.Acl": [
+      {
+        "id": [
+          "test-1",
+          "basic-acl"
+        ],
+        "included": [],
+        "lastModified": 1581549995,
+        "metadata": "",
+        "roleAddresses": [
+          {
+            "roleId": [
+              "test-1",
+              "basic-role"
+            ],
+            "addresses": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+              "AMd6J50BQiUvhzu7JJCQiu3TcpCimKuPJQ"
+            ]
+          },
+          {
+            "roleId": [
+              "test-1",
+              "god-role"
+            ],
+            "addresses": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ]
+          }
+        ],
+        "title": "Sample ACL",
+        "updateHeight": 3
+      }
+    ],
+    "io.setl.bc.json.data.acl.AclRole": [
+      {
+        "id": [
+          "test-1",
+          "basic-role"
+        ],
+        "lastModified": 1581549995,
+        "metadata": "",
+        "permissions": {
+          "/c": [
+            "CREATE"
+          ],
+          "/d": [
+            "DELETE"
+          ],
+          "/r": [
+            "READ"
+          ],
+          "/u": [
+            "UPDATE"
+          ]
+        },
+        "title": "Sample role",
+        "updateHeight": 3
+      },
+      {
+        "id": [
+          "test-1",
+          "god-role"
+        ],
+        "lastModified": 1581549995,
+        "metadata": "",
+        "permissions": {
+          "": [
+            "CREATE",
+            "READ",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        "title": "Sample role",
+        "updateHeight": 3
+      }
+    ],
+    "io.setl.bc.pychain.state.entry.AddressEntry": [
+      {
+        "address": "ABUY8beSyHQxzkYsfD5PoBO_S_NLpKPNJA",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1581549635,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "APFgnlHQXPZUdU41ZcJdWgSwQdMmyouN0Q",
+        "balance": {},
+        "addressMetadata": "Georgina's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1581549885,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "balance": {
+          "SYS|STAKE": -3000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1581549635,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AKXzoe2dsXeiA2d28stOZDMPRbj8l1vjqw",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1581549635,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ACn34UDZCdUzarHIgNc7Ef7bPlXn541GRA",
+        "balance": {},
+        "addressMetadata": "Anne's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1581549885,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AHQ30xJqFupMvCu4MEaYVPAk5DQ2aGTafA",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1581549635,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g",
+        "balance": {},
+        "addressMetadata": "Timothy's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1581549885,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ALUlCKoRHVBEPuj1I0Vj_kHGawUf5fH-XA",
+        "balance": {},
+        "addressMetadata": "Richard's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1581549885,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AMd6J50BQiUvhzu7JJCQiu3TcpCimKuPJQ",
+        "balance": {},
+        "addressMetadata": "Julian's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1581549885,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "balance": {},
+        "addressMetadata": "Uncle Quentin's Wallet",
+        "addressPermissions": 0,
+        "nonce": 3,
+        "authorisedTx": null,
+        "updateTime": 1581549965,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 3,
+        "updateHeight": -1
+      }
+    ],
+    "io.setl.bc.pychain.state.entry.NamespaceEntry": [
+      {
+        "name": "SYS",
+        "address": "BDqCkGEGIDqwn2AmMe-IiJzXCbvuy33-WA",
+        "classes": {
+          "STAKE": {
+            "assetId": "STAKE",
+            "metadata": "Voting power in consensus"
+          }
+        },
+        "metadata": "Internal system namespace.",
+        "updateHeight": -1
+      }
+    ]
+  },
+  "namedData": {}
+}

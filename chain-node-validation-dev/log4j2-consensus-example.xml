@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log the configuration of Log4j2 at DEBUG level -->
+<Configuration monitorInterval="5" status="DEBUG">
+
+  <!-- Change these properties to configure logging -->
+  <Properties>
+    <Property name="nodeName">n-001e-00</Property>
+    <Property name="logFolder">./log</Property>
+    <Property name="maxFileSize">25 MB</Property>
+    <Property name="maxFilesRetained">10</Property>
+  </Properties>
+
+
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <Filters>
+        <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+        <MarkerFilter marker="CONSENSUS" onMatch="ACCEPT" onMismatch="REJECT"/>
+      </Filters>
+    </Console>
+
+    <Async name="Async">
+      <AppenderRef ref="Console"/>
+      <!-- Do NOT use the horrible Disruptor queue. It replaces locking with busy spins which destroys overall performance. -->
+      <ArrayBlockingQueue/>
+    </Async>
+
+  </Appenders>
+
+  <Loggers>
+    <!-- Do not leave this at DEBUG in production. WARN, or ERROR, is recommended. -->
+    <Root level="DEBUG">
+      <AppenderRef ref="Async"/>
+    </Root>
+
+    <!-- Only interested in Jetty when it goes wrong. -->
+    <Logger level="ERROR" name="org.eclipse.jetty">
+      <AppenderRef ref="Async"/>
+    </Logger>
+
+    <!-- Disable logging of P2P message details -->
+    <Logger level="ERROR" name="io.setl.bc.pychain.net.DefaultPipelineFactory">
+      <AppenderRef ref="Async"/>
+    </Logger>
+
+  </Loggers>
+</Configuration>

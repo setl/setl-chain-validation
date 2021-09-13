@@ -1,0 +1,4 @@
+dependencies {
+    compile group: 'com.h2database', name: 'h2', version: h2Version
+    compile project(':chain-core')
+}

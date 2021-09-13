@@ -1,0 +1,52 @@
+{
+  "stateName": "sample_state.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "update acl role",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_ACL_ROLE",
+        "roleId": [
+          "test-1",
+          "basic-role"
+        ],
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/title",
+            "value": "Modified ACL"
+          },
+          {
+            "op": "add",
+            "path": "/permissions/~1public",
+            "value": [
+              "c",
+              "r"
+            ]
+          }
+        ]
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.acl.AclRole/0/permissions/~1public",
+          "value": [
+            "CREATE",
+            "READ"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.json.data.acl.AclRole/0/title",
+          "value": "Modified ACL"
+        }
+      ]
+    }
+  ]
+}

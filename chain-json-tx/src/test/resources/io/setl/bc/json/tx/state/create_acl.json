@@ -1,0 +1,141 @@
+{
+  "stateName": "sample_state.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "create acl",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_ACL",
+        "acl": {
+          "id": [
+            "test-1",
+            "acl-role-test"
+          ],
+          "title": "Sample role",
+          "roleAddresses": [
+            {
+              "roleId": [
+                "test-1",
+                "basic-role"
+              ],
+              "addresses": [
+                "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+                "AMd6J50BQiUvhzu7JJCQiu3TcpCimKuPJQ"
+              ]
+            },
+            {
+              "roleId": [
+                "test-1",
+                "god-role"
+              ],
+              "addresses": [
+                "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+              ]
+            }
+          ]
+        }
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.acl.Acl/1",
+          "value": {
+            "id": [
+              "test-1",
+              "acl-role-test"
+            ],
+            "included": [],
+            "lastModified": 1581549995,
+            "metadata": "",
+            "roleAddresses": [
+              {
+                "addresses": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+                  "AMd6J50BQiUvhzu7JJCQiu3TcpCimKuPJQ"
+                ],
+                "roleId": [
+                  "test-1",
+                  "basic-role"
+                ]
+              },
+              {
+                "addresses": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "roleId": [
+                  "test-1",
+                  "god-role"
+                ]
+              }
+            ],
+            "title": "Sample role",
+            "updateHeight": 3
+          }
+        }
+      ]
+    },
+    {
+      "logNewState": false,
+      "name": "create acl - add non existing address",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "Address \"AFQ_aZPmJs0D2hy7QL9T11eQ-79EUYUr0g\" does not exist"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_ACL",
+        "acl": {
+          "id": [
+            "test-1",
+            "acl-role-test"
+          ],
+          "title": "Sample role",
+          "roleAddresses": [
+            {
+              "roleId": [
+                "test-1",
+                "basic-role"
+              ],
+              "addresses": [
+                "AFQ_aZPmJs0D2hy7QL9T11eQ-79EUYUr0g"
+              ]
+            }
+          ]
+        }
+      },
+      "changes": []
+    },
+    {
+      "logNewState": false,
+      "name": "create acl - lacking privilege",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "Address AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g does not have the \"createAcl\" privilege in the \"test-1\" namespace."
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D030107034200043E842285E9BE0219E9D4D2ACD75F935A3015F243CA15C54FF809AF886E1E3009DF413A876B10E5CEF5E23937077E9755873A6BE61BC527EB43F52D3EE01A7898",
+        "txType": "JSON_CREATE_ACL",
+        "acl": {
+          "id": [
+            "test-1",
+            "acl-role-test"
+          ],
+          "title": "Sample role",
+          "roleAddresses": [
+          ]
+        }
+      },
+      "changes": []
+    }
+  ]
+}

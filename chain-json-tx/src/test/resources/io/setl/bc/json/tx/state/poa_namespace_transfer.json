@@ -1,0 +1,86 @@
+{
+  "stateName": "sample_state_poa.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "poa namespace transfer",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "namespace": "PicnicFood",
+        "address": "AOCmHLwuJfWi2ErfrZZocgGM-FmttX2vzQ",
+        "toAddress": "ABO66opxVprUsUl8drBjgAiNCN5YhPLQdw",
+        "publicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004E60C64F5D4EF9F823A1838B92C0C17624041584FFBC1DE99C1439E5261FD88C4FC0363DF971CC865E2E3FCD2F2716A10B659F3BDAEF5990BD9260A07EDB0B390",
+        "txType": "POA_TRANSFER_NAMESPACE",
+        "poaAddress": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw",
+        "poaReference": "Woof",
+        "protocol": ""
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/1/balance/PicnicFood|GingerBeer",
+          "value": -850
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/1/balance/PicnicFood|Sandwiches",
+          "value": -46
+        },
+        {
+          "op": "remove",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/1/balance/PicnicFood|ScoobySnacks"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/1/updateHeight",
+          "value": 9
+        },
+        {
+          "op": "remove",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/12/balance/PicnicFood|GingerBeer"
+        },
+        {
+          "op": "remove",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/12/balance/PicnicFood|Sandwiches"
+        },
+        {
+          "op": "remove",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/12/balance/PicnicFood|ScoobySnacks"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.AddressEntry/12/updateHeight",
+          "value": 9
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.NamespaceEntry/0/address",
+          "value": "ABO66opxVprUsUl8drBjgAiNCN5YhPLQdw"
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.NamespaceEntry/0/metadata",
+          "value": ""
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.NamespaceEntry/0/updateHeight",
+          "value": 9
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.PoaEntry/0/detail/items/1/amount",
+          "value": 999999999
+        },
+        {
+          "op": "replace",
+          "path": "/merkles/io.setl.bc.pychain.state.entry.PoaEntry/0/updateHeight",
+          "value": 9
+        }
+      ]
+    }
+  ]
+}

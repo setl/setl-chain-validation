@@ -1,0 +1,12 @@
+dependencies {
+    compile group: 'io.swagger.core.v3', name: 'swagger-annotations', version: swaggerVersion
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile group: 'io.setl.json-simple', name: 'json-simple', version: jsonSimpleSetlVersion, changing: true
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+    compile project(':chain-common')
+    compile project(':chain-core')
+    compile project(':chain-core-wallet')
+}

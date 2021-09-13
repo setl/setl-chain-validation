@@ -1,0 +1,356 @@
+{
+  "keyDigestType": "SHA-512/256",
+  "version": 5,
+  "metadata": {
+    "blockHash": null,
+    "chainId": 30,
+    "height": 9,
+    "timestamp": 1599063430
+  },
+  "management": {
+    "configuration": {
+      "preferredDigestType": 2,
+      "registeraddresses": 0
+    },
+    "privilegedKeys": {
+      "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw": {
+        "address": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b81040023038186000401a2d07fc795c61804f9490124a3bc46eadaa3381b0be6a2ef26f97da7a8da41305a81b9bfeb33d0c34823ca7ed92bba5fd47ee1f9fe4ee5687cb897f6a35c8c6bae003fafc1c2dacc215fff9d97789c83db61f4d633edcc62e024f4e5c627dd04e5b828edf7376796fc7a7d264a75146f676d942e9a126e0818ec41f34dc99d2be05b16",
+        "name": "issuerOfStake",
+        "permissions": [
+          "Issue Stake"
+        ]
+      },
+      "BEme_V3kljZY2nv6d_gyfzO1T_pLfoHygA": {
+        "address": "BEme_V3kljZY2nv6d_gyfzO1T_pLfoHygA",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b81040023038186000400efebc1ad5224a3cbb2c6fe36c94af2a6c5d413db23681f778a406148cfec25831f296f27d828c55f090c27266d8260d8f98a3d8d859cac185f95ae83643033820d00d1bdacfe0fc3e181dfb3f7d1a43c228a024f3c15f1c9e92855da2c3081d94321059ce1b173f89bbc64d29fe621d0b5895361245a499446abb2a4e40aba84b44e4a",
+        "name": "userManager",
+        "permissions": [
+          "Create Privileged User",
+          "Modify Privileged User"
+        ]
+      },
+      "BJZO_V0u5GK9x8pFY_Mp1YgOpEkIDT27CQ": {
+        "address": "BJZO_V0u5GK9x8pFY_Mp1YgOpEkIDT27CQ",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b81040023038186000400ced6b4867d562d1a30899f756e3c54bf857f0c6d6e243974e2e7323ad29b7e5b0e0ab43df43b49040a87a63f76fee0fcc33fec7fe88e67581a321dcc6c1b8712210004622e7ff55882beb2629b06c2de89a0812b702556520228d26ed1fb794d65f61da4d17856a38fb1eec08aedd9510e5870f1bbc6323d092e252472287f490d6fb1",
+        "name": "configurationManager",
+        "permissions": [
+          "Change Configuration"
+        ]
+      },
+      "BMIwdTN2hLQJmEvCAuOuPJ9S811l0FwBpw": {
+        "address": "BMIwdTN2hLQJmEvCAuOuPJ9S811l0FwBpw",
+        "updateHeight": 0,
+        "expiry": 9223372036854775807,
+        "hexPublicKey": "30819b301006072a8648ce3d020106052b8104002303818600040106c1a1c3238ca4d98f1268e02f24197f3428295398939e4613605769f312ecc2ebb0bb48c62bfdd2770662377f1d082b14db3ccc11b992826088611b849ccd96ac01831f8c38f17e58858109da48730d0864acb5718e16f73983cc33c6adac643f5c39ea875f3eecf508fde625b59d879ad9b730663bd24d825054859bdf09c8a6ab7e",
+        "name": "upgradeManager",
+        "permissions": [
+          "Apply Upgrade"
+        ]
+      }
+    },
+    "crossChainDetails": {
+    },
+    "validationNodes": [
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d0301070342000400d74cd98e3dcfad12330d398c5cd43dc9ffff2ccbf18e442400b12e7f687dc710c1f7b319b454acaecdf2284f986d73abcaea6b74cdad048e24158156654913",
+        "returnAddress": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d0301070342000400d74cd98e3dcfad12330d398c5cd43dc9ffff2ccbf18e442400b12e7f687dc710c1f7b319b454acaecdf2284f986d73abcaea6b74cdad048e24158156654913",
+        "updateHeight": -1
+      },
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d030107034200047b38cd8a0871031bf4ef5afd14bc0647ec25f0b37f27714fc75853975971f735718fa3512b60302b5482cd8dc47736c54be2e9182b4b4f00c109721d27b1d95d",
+        "returnAddress": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d030107034200047b38cd8a0871031bf4ef5afd14bc0647ec25f0b37f27714fc75853975971f735718fa3512b60302b5482cd8dc47736c54be2e9182b4b4f00c109721d27b1d95d",
+        "updateHeight": -1
+      },
+      {
+        "publicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004b14f3ed145f698afca4b1c4e55bb54c31cc396980b32e41be4d7d9874b0e922897c7cc709fac263d04670fa845631ced1e2b26737f178fe83d73bc972c05551d",
+        "returnAddress": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "balance": 1000000,
+        "nonce": 0,
+        "hexPublicKey": "3059301306072a8648ce3d020106082a8648ce3d03010703420004b14f3ed145f698afca4b1c4e55bb54c31cc396980b32e41be4d7d9874b0e922897c7cc709fac263d04670fa845631ced1e2b26737f178fe83d73bc972c05551d",
+        "updateHeight": -1
+      }
+    ]
+  },
+  "merkles": {
+    "io.setl.bc.pychain.state.entry.AddressEntry": [
+      {
+        "address": "BEme_V3kljZY2nv6d_gyfzO1T_pLfoHygA",
+        "balance": {
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 0,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ABO66opxVprUsUl8drBjgAiNCN5YhPLQdw",
+        "balance": {
+          "PicnicFood|Sandwiches": 2,
+          "PicnicFood|ScoobySnacks": 1133625061307359528087565
+        },
+        "addressMetadata": "Timothy's Wallet",
+        "addressPermissions": 0,
+        "nonce": 2,
+        "authorisedTx": null,
+        "updateTime": 1599063430,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ALfiigUIgZt86ToZ-3kCA1QK_WZTwaTHoQ",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1599061196,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "BJZO_V0u5GK9x8pFY_Mp1YgOpEkIDT27CQ",
+        "balance": {
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 0,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "balance": {
+          "SYS|STAKE": -3000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1599061196,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AKQZpQS6saZBlfkY3JhI_wJ1gGLwanAZHg",
+        "balance": {
+          "PicnicFood|Sandwiches": 9
+        },
+        "addressMetadata": "Richard's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1599063085,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "ACpRBl6iRYuoo53zqxOIRG8_AEm_MEOdWw",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1599061196,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AJM0VM2yTMW26yDQOC-HvysEtLTRqYKssQ",
+        "balance": {
+          "PicnicFood|GingerBeer": 200,
+          "PicnicFood|Sandwiches": 15
+        },
+        "addressMetadata": "Anne's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1599063095,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "BMIwdTN2hLQJmEvCAuOuPJ9S811l0FwBpw",
+        "balance": {
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 0,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AOCmHLwuJfWi2ErfrZZocgGM-FmttX2vzQ",
+        "balance": {
+          "PicnicFood|GingerBeer": 250,
+          "PicnicFood|Sandwiches": 12
+        },
+        "addressMetadata": "Georgina's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1599063090,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AMUcc1oDPgU7oEBZ0HU7ogOX7W8I4PoiwA",
+        "balance": {
+          "PicnicFood|GingerBeer": 400,
+          "PicnicFood|Sandwiches": 10
+        },
+        "addressMetadata": "Julian's Wallet",
+        "addressPermissions": 0,
+        "nonce": 1,
+        "authorisedTx": null,
+        "updateTime": 1599063085,
+        "highPriorityNonce": 1,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AA7-VVXPTs6XL6YPBb8f2vyMbDkGcgcXzQ",
+        "balance": {
+          "SYS|STATE": 1000000
+        },
+        "addressMetadata": null,
+        "addressPermissions": 0,
+        "nonce": 0,
+        "authorisedTx": null,
+        "updateTime": 1599061196,
+        "highPriorityNonce": 0,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      },
+      {
+        "address": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw",
+        "balance": {
+          "PicnicFood|GingerBeer": -850,
+          "PicnicFood|Sandwiches": -48,
+          "PicnicFood|ScoobySnacks": -1133625061307359528087565
+        },
+        "addressMetadata": "Uncle Quentin's Wallet",
+        "addressPermissions": 0,
+        "nonce": 8,
+        "authorisedTx": null,
+        "updateTime": 1599063415,
+        "highPriorityNonce": 6,
+        "lowPriorityNonce": 0,
+        "updateHeight": -1
+      }
+    ],
+    "io.setl.bc.pychain.state.entry.NamespaceEntry": [
+      {
+        "name": "PicnicFood",
+        "address": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw",
+        "classes": {
+          "GingerBeer": {
+            "assetId": "GingerBeer",
+            "metadata": "Available in ml and in \"lashings\""
+          },
+          "Sandwiches": {
+            "assetId": "Sandwiches",
+            "metadata": "Available in cucumber flavour"
+          },
+          "ScoobySnacks": {
+            "assetId": "ScoobySnacks",
+            "metadata": "Origin is mystery."
+          }
+        },
+        "metadata": "Picnic food",
+        "updateHeight": -1
+      },
+      {
+        "name": "SYS",
+        "address": "BCA8JVqlqkIKSzaUpgU0JEVCEGabL49bFw",
+        "classes": {
+          "STAKE": {
+            "assetId": "STAKE",
+            "metadata": "Voting power in consensus"
+          }
+        },
+        "metadata": "Internal system namespace.",
+        "updateHeight": -1
+      }
+    ],
+    "io.setl.bc.pychain.state.entry.PoaEntry": [
+      {
+        "key": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw|Woof",
+        "detail": {
+          "reference": "Woof",
+          "issuer": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw",
+          "attorney": "AOCmHLwuJfWi2ErfrZZocgGM-FmttX2vzQ",
+          "startTime": 0,
+          "endTime": 9223372036854775807,
+          "items": [
+            {
+              "txType": "TRANSFER_ASSET_X_CHAIN",
+              "amount": 100,
+              "assets": [
+                "PicnicFood|GingerBeer",
+                "PicnicFood|Sandwiches"
+              ]
+            },
+            {
+              "txType": "TRANSFER_NAMESPACE",
+              "amount": 1000000000,
+              "assets": [
+                "PicnicFood"
+              ]
+            }
+          ]
+        },
+        "headers": [
+        ],
+        "updateHeight": 8
+      },
+      {
+        "key": "AK5NShhLM1xv4Ch9gPMpL7gchu0XpUK2Aw",
+        "detail": null,
+        "headers": [
+          {
+            "reference": "Woof",
+            "startDate": 0,
+            "expiryDate": 9223372036854775807
+          }
+        ],
+        "updateHeight": 8
+      }
+    ]
+  },
+  "namedData": {
+  }
+}

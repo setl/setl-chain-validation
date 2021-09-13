@@ -1,0 +1,262 @@
+.page-wrapper{
+    display:none;
+}
+.page-wrapper.active{
+    display:block;
+}
+
+#block-list-wrapper h2:after,
+#asset-list-wrapper h2:after,
+#state-list-wrapper h2:nth-child(1):after{
+    content:"\f107";
+    font-family: fontAwesome;
+    float:right;
+    font-size:18px;
+    margin-top: -2px;
+}
+#block-list-wrapper h2.collapsed:after,
+#asset-list-wrapper h2.collapsed:after,
+#state-list-wrapper h2.collapsed:nth-child(1):after{
+    content:"\f106";
+}
+.media {
+    overflow:visible;
+}
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}
+.has-switch label{
+    z-index: 1;
+}
+
+.custom-tree-view {
+    min-height:20px;
+    padding:19px;
+}
+.custom-tree-view li {
+    list-style-type:none;
+    margin:0;
+    position:relative
+}
+.custom-tree-view li::before, .tree li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto
+}
+.custom-tree-view li::before {
+    border-left:1px solid #999;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px
+}
+.custom-tree-view li::after {
+    border-top:1px solid #999;
+    height:20px;
+    top:25px;
+    width:25px
+}
+.custom-tree-view li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.custom-tree-view li.parent_li>span {
+    cursor:pointer
+}
+.custom-tree-view>ul>li::before, .custom-tree-view>ul>li::after {
+    border:0
+}
+.custom-tree-view li:last-child::before {
+    height:30px
+}
+.custom-tree-view li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span {
+    background:#eee;
+    color:#000
+}
+
+.table-responsive table{
+    margin-bottom: 0;
+}
+
+#tableHover1 {
+    margin-bottom: 20px;
+}
+#qrcode{
+    height:200px;
+    width:200px;
+}
+#qrcode canvas{
+    border: solid 10px white;
+}
+.tablerow_hover{
+    background: rgba(255, 0, 0, 0.2) none repeat scroll 0 0;
+}
+.table-responsive {
+    overflow-x: scroll !important;
+}
+
+
+.rawBlockDialog .modal-body {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.jstValue {
+    font-family:"open-sans-light",sans-serif;
+    font-size:12px;
+}
+.jstProperty{
+    color: white;
+}
+
+.list-group .list-group-item:hover .list-options{
+    display:block;
+    right:-45px;
+}
+
+.dairy-tx-icon{
+    display:block;
+    float:left;
+    padding:5px;
+}
+
+.diary-tx-btn{
+    line-height:55px;
+    font-weight:500;
+}
+button.diary-tx-btn{
+    padding:0 10px;
+}
+
+#corp-action-wrapper label{
+    line-height:30px;
+}
+
+.dividend-show{
+    display: none;
+}
+
+#SearchPopupWrapper .main-search{
+    width:95%;
+    background-position: 6px 6px;
+    padding-left: 50px;
+}
+#SearchPopupWrapper .col-md-5{
+    border-right:1px solid rgba(255, 255, 255, 0.15);
+}
+
+.row-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+.col-same-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    vertical-align: top;
+}
+
+input{
+    color: white;
+}
+
+.explorerSearchDialog .modal-lg{
+    width: 80%
+}
+
+#txdiagnosis-tab-pane .select-container{
+    position: relative;
+}
+#txdiagnosis-tab-pane .checkbox + .checkbox{
+    margin-top:10px;
+}
+
+#smartContractTab .panel-heading h3{
+    line-height:30px;
+    font-weight: bold;
+}
+
+#dvp-smartContractTab .table-wrapper{
+    overflow: scroll;
+    max-height:300px;
+}
+.wbb {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11) !important;
+}
+
+#dvp-existing-contract-wrapper tbody td,
+#dvp-existing-contract-wrapper th,
+#sac-existing-contract-wrapper th,
+#mac-existing-contract-wrapper th,
+#explorer-existing-contract-wrapper tbody td,
+#explorer-existing-contract-wrapper th
+{
+    width:33.33%;
+}
+
+#dvp-contract-ad-bal-wrapper-a th,
+#dvp-contract-ad-bal-wrapper-b th,
+#dvp-contract-ad-bal-wrapper-a td,
+#dvp-contract-ad-bal-wrapper-b td,
+#sac-bl-wrapper th,
+#sac-bl-wrapper td,
+#mac-bl-wrapper th,
+#mac-bl-wrapper td
+{
+    width:50%;
+}
+#collapseSplit label{
+    max-width: 100px;
+}
+
+.diary-tx-btn [class*="sa-side-"] {
+    width: 49px;
+    height: 55px;
+}
+
+#contract-page-main-wrapper .modal-content, .dark {
+    background: rgba(0, 0, 0, 0.41);
+}
+
+.m-b-14{
+    margin-bottom: 14px;
+}
+
+.switch-status-label{
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height:12px !important;
+    font-style: normal;
+}
+
+#single-clearingTab .block-title,
+#multi-clearingTab .block-title{
+    height:30px;
+    margin:0;
+    line-height:20px;
+}
+
+.no-background{
+    background:none;
+}
+
+.bl-wrap{
+    width: 100px;
+    vertical-align: top;
+}
+#SearchPopupWrapper .searchResultPreview .listview h6{
+    padding: 3px 6px;
+    margin: 5px 0px;
+}
+.text-wrapper{
+    padding: 3px 6px;
+    background-color: rgba(0, 0, 0, 0.56)
+}

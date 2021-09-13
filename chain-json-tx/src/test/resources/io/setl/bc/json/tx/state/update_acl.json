@@ -1,0 +1,106 @@
+{
+  "stateName": "sample_state.json",
+  "tests": [
+    {
+      "logNewState": false,
+      "name": "update acl",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_UPDATE_ACL",
+        "aclId": [
+          "test-1",
+          "basic-acl"
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "path": "/included/-",
+            "value": [
+              "test-1",
+              "basic-acl"
+            ]
+          },
+          {
+            "op": "add",
+            "path": "/roleAddresses/-",
+            "value": {
+              "roleId": [
+                "test-1",
+                "basic-role"
+              ],
+              "addresses": [
+                "ACn34UDZCdUzarHIgNc7Ef7bPlXn541GRA",
+                "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g"
+              ]
+            }
+          }
+        ]
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.acl.Acl/0/included/0",
+          "value": [
+            "test-1",
+            "basic-acl"
+          ]
+        },
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.acl.Acl/0/roleAddresses/0/addresses/0",
+          "value": "ACn34UDZCdUzarHIgNc7Ef7bPlXn541GRA"
+        },
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.acl.Acl/0/roleAddresses/0/addresses/2",
+          "value": "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g"
+        }
+      ]
+    },
+    {
+      "logNewState": false,
+      "name": "update acl - lacking privilege",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "Address AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g does not have the \"updateAcl\" privilege in the \"test-1\" namespace."
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D030107034200043E842285E9BE0219E9D4D2ACD75F935A3015F243CA15C54FF809AF886E1E3009DF413A876B10E5CEF5E23937077E9755873A6BE61BC527EB43F52D3EE01A7898",
+        "txType": "JSON_UPDATE_ACL",
+        "aclId": [
+          "test-1",
+          "basic-acl"
+        ],
+        "patch": []
+      },
+      "changes": []
+    },
+    {
+      "logNewState": false,
+      "name": "update acl - no such acl",
+      "returnTuple": {
+        "success": "FAIL",
+        "status": "ACL \"test-1�does-not-exist\" does not exist."
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "AGgxbOtUrVVggrc6I0ZQs8FddPd-aCec3g",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D030107034200043E842285E9BE0219E9D4D2ACD75F935A3015F243CA15C54FF809AF886E1E3009DF413A876B10E5CEF5E23937077E9755873A6BE61BC527EB43F52D3EE01A7898",
+        "txType": "JSON_UPDATE_ACL",
+        "aclId": [
+          "test-1",
+          "does-not-exist"
+        ],
+        "patch": []
+      },
+      "changes": []
+    }
+  ]
+}

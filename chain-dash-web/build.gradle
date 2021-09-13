@@ -1,0 +1,55 @@
+dependencies {
+//    compile group: 'io.netty', name: 'netty-all', version: nettyVersion
+//
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+//    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile project(':chain-core')
+    compile project(':chain-code-tx')
+//    compile project(':chain-common')
+
+//Spring
+//        compile("org.springframework.boot:spring-boot-starter-jetty")
+//        compile("org.springframework.boot:spring-boot-starter-websocket"){
+//            exclude module: 'spring-boot-starter-tomcat'
+//        }
+    compile("org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-tomcat'
+        exclude module: 'spring-boot-starter-logging'
+    }
+    //    testCompile("org.springframework:spring-test:${springVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+
+
+
+//Data
+    compile group: 'com.jsoniter', name: 'jsoniter', version: '0.9.8'
+//        compile 'io.setl:message-pack:1.0.2'
+//
+////Crypto
+    compile group: 'org.abstractj.kalium', name: 'kalium', version: '0.3.0'
+//        compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.56'
+
+//
+////Logging
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: slf4jVersion
+
+//        // Test
+//        testCompile("org.springframework.boot:spring-boot-starter-test")
+
+//// Jackson
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+//  compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.0'
+
+    // https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core
+    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+
+    compile ("io.springfox:springfox-swagger2:2.8.0"){
+        exclude module: 'log4j-slf4j-impl'
+    }
+
+    compile "io.springfox:springfox-swagger-ui:2.8.0"
+}

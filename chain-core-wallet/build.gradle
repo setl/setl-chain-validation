@@ -1,0 +1,7 @@
+ 
+dependencies {
+    compile group: 'io.setl', name: 'passwd-common', version: setlPasswdCommon
+
+    compile project(':chain-core')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

@@ -1,0 +1,12 @@
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.netty', name: 'netty-all', version: nettyVersion
+
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+
+    compile project(':chain-peerman')
+    compile project(':chain-common')
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator', version: springBootVersion
+}

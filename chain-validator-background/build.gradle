@@ -1,0 +1,14 @@
+dependencies {
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}"){
+        exclude module: 'spring-boot-starter-logging'
+    }
+
+    compile project(':chain-core')
+    compile project(':chain-code-tx')
+    compile project(':chain-dbstore-mysql')
+    compile project(':chain-dbstore-sqlite')
+    compile project(':chain-store-berkeley')
+    compile project(':chain-store-bos')
+    compile project(':chain-store')
+    compile project(':chain-validator')
+}

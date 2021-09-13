@@ -1,0 +1,328 @@
+buildscript {
+    repositories {
+        //Allow local repository for snapshot builds
+        if (version.endsWith("SNAPSHOT")) {
+            mavenLocal()
+        }
+        maven { url "http://si-nexus01.dev.setl.io:8081/repository/maven-public/" }
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.6'
+        classpath "io.setl.gradle.plugins:setl-gradle-plugins:1.0.1"
+        classpath "org.owasp:dependency-check-gradle:5.3.2.1"
+        classpath 'com.github.jk1:gradle-license-report:1.16'
+    }
+}
+
+plugins {
+    id "java-library"
+    id "com.github.spotbugs" version "2.0.0"
+    id 'info.solidsoft.pitest' version "1.4.6"
+}
+
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'maven-publish'
+apply plugin: "com.github.spotbugs"
+apply plugin: "org.sonarqube"
+apply plugin: 'info.solidsoft.pitest'
+apply plugin: "org.owasp.dependencycheck"
+apply plugin: 'com.github.jk1.dependency-license-report'
+
+sourceCompatibility = 11
+
+//Exclude coverage of entire pychain-dash*, pychain-loader and cmdtools modules. Note this only applies to sonar (not jacoco itself)
+sonarqube {
+    properties {
+        property 'sonar.coverage.exclusions', "pychain-dash-web/src/main/java/**/*, pychain-dash-scenario/src/main/java/**/*, " +
+                "pychain-cmdtools/src/main/java/**/*, pychain-loader/src/main/java/**/*, pychain-loader-reactive/src/main/java/**/*"
+        property "sonar.dependencyCheck.jsonReportPath", "$buildDir/reports/dependency-check-report.json"
+        property "sonar.dependencyCheck.xmlReportPath", "$buildDir/reports/dependency-check-report.xml"
+        property "sonar.dependencyCheck.htmlReportPath", "$buildDir/reports/dependency-check-report.html"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+//PLEASE DO NOT ADD FURTHER REPOSITORIES HERE - ADD TO NEXUS
+//Repositories
+repositories {
+    //Allow local repository for snapshot builds
+    if (version.endsWith("SNAPSHOT")) {
+        mavenLocal()
+    }
+    maven { url "http://si-nexus01.dev.setl.io:8081/repository/maven-public/" }
+}
+
+configure(allprojects) { project ->
+    ext.bouncyCastleVersion = '1.68'
+    ext.dockerRepo = '456569976649.dkr.ecr.eu-west-1.amazonaws.com/setl'
+    ext.googleGuavaVersion = '29.0-jre'
+    ext.h2Version = '1.4.200'
+    ext.jacksonVersion = '2.11.3'
+    ext.jsonSimpleSetlVersion = "1.2.3"
+    ext.kafkaVersion = '2.7.0'
+    ext.jsonCanonicalSetlVersion = '2.1'
+    ext.log4j2Version = "2.13.3"
+    ext.messagePackVersion = '0.8.20'
+    ext.micrometerVersion = '1.2.0'
+    ext.mysqlVersion = '5.1.47'
+    ext.nettyVersion = "4.1.50.Final"
+    ext.postgresVersion = "42.2.6"
+    ext.prngVersion = '0.13'
+    ext.rocksVersion = '6.10.2'
+    ext.setlBosVersion = '2.0.2'
+    ext.setlCommons = '1.7'
+    ext.setlPasswdCommon = '1.9'
+    ext.setlHttpSignatures = '2.1.0'
+    ext.slf4jVersion = "1.7.30"
+    ext.springBootVersion = "2.3.9.RELEASE"
+    ext.springMetricsVersion = '0.5.1.RELEASE'
+    ext.springSecurityVersion = '5.3.8.RELEASE'
+    ext.springVersion = '5.2.13.RELEASE'
+    ext.sqlliteVersion = "3.21.0"
+    ext.utilMsgpackVersion = '1.0.5'
+    ext.setlJwtSpringVersion = '1.6'
+    ext.snakeYamlVersion = '1.26'
+    ext.swaggerVersion = '2.0.9'
+    ext.swaggerGradleVersion = '2.0.9.1'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    apply plugin: 'jacoco'
+    apply plugin: 'checkstyle'
+    apply plugin: "com.github.spotbugs"
+    apply plugin: "info.solidsoft.pitest"
+    apply plugin: "org.owasp.dependencycheck"
+    group 'io.setl.bc'
+//    version '1.0-RC8'
+    version '1.0-SNAPSHOT'
+
+    //Docker tasks
+    if(new File("${project.projectDir}/Dockerfile").exists()) {
+        apply plugin: "setl-docker-plugin"
+
+        dockerPlugin {
+            dockerRepositories = ['dreg.ad.setl.io/setl', '456569976649.dkr.ecr.eu-west-1.amazonaws.com/setl']
+        }
+    }
+
+    //Repositories
+    repositories {
+        //Allow local repository for snapshot builds
+        if (version.endsWith("SNAPSHOT")) {
+            mavenLocal()
+        }
+        maven { url "http://si-nexus01.dev.setl.io:8081/repository/maven-public/" }
+    }
+
+    configurations {
+
+        all*.exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+        all*.exclude group: 'ch.qos.logback', module: 'logback-classic'
+        all*.exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+        all*.resolutionStrategy {
+            force group : 'org.apache.logging.log4j' , name: 'log4j-api', version: log4j2Version
+            force group : 'org.apache.logging.log4j' , name: 'log4j-core', version: log4j2Version
+            force group : 'org.apache.logging.log4j' , name: 'log4j-slf4j-impl', version: log4j2Version
+            force group : 'org.slf4j' , name: 'slf4j-api', version: slf4jVersion
+            force group : 'org.springframework' , name: 'spring-core', version: springVersion
+            force group : 'org.springframework' , name: 'spring-beans', version: springVersion
+            force group : 'org.springframework' , name: 'spring-context', version: springVersion
+            force group : 'org.springframework' , name: 'spring-aop', version: springVersion
+
+            force group : 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+            force group : 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+            force group : 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+            force group : 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: jacksonVersion
+
+            force group : 'com.fasterxml.jackson.module', name: 'jackson-module-scala_2.13', version: jacksonVersion
+            force group : 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: jacksonVersion
+
+//            force group : 'org.ow2.asm' , name: 'asm', version: '7.0'
+
+        }
+
+    }
+
+    dependencies {
+        spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1'
+
+        compile group: 'com.google.code.findbugs', name: 'annotations', version: '3.0.1'
+        compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+        testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+        testCompile group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
+        testRuntimeOnly group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4j2Version
+        testRuntimeOnly group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4j2Version
+        testRuntimeOnly group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4j2Version
+        
+    }
+
+    //Testing
+    test {
+        exclude '**/*IT.class'
+        exclude '**/*PT.class'
+        //Only run dbtestsuite when property set
+        if (!project.hasProperty('dbtestsuite'))
+            exclude '**/DBTestSuite.class'
+
+    }
+
+    //Add native library for tests.
+    tasks.withType(Test) {
+        systemProperty "java.library.path", "${project.projectDir}/../native"
+    }
+
+    //Collect jars for installation scripts
+    task install(type: Copy) {
+        dependsOn build
+        from configurations.runtime
+        from jar
+        into "${project.projectDir}/build/install-lib"
+    }
+
+    //Check that release build has no snapshot
+    task checkSnapshot() {
+        doLast {
+            if (version.endsWith("SNAPSHOT"))
+                return;
+
+            def snap = false;
+            project.configurations.runtime.each {
+                if (it.toString().contains("SNAPSHOT")) {
+                    snap = true;
+                    println(("Release build contains snapshot dependencies: " + it));
+                }
+            }
+
+            if (snap)
+                throw new Exception("Release build contains snapshot dependencies");
+
+        }
+    }
+
+    jar.dependsOn checkSnapshot
+
+    task integrationTests(group: 'verification', type: Test) {
+        include '**/*IT.class'
+    }
+
+    task performanceTests(group: 'verification', type: Test) {
+        include '**/*PT.class'
+    }
+
+    //Checkstyle
+    checkstyle {
+        toolVersion = "8.41.1"
+        configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    }
+
+    checkstyleTest {
+        enabled = false
+    }
+
+
+
+    jacoco {
+        toolVersion = "0.8.2"
+
+    }
+
+//
+    jacocoTestReport {
+        reports {
+            xml.enabled false
+            csv.enabled false
+            html.destination file("${buildDir}/jacocoHtml")
+        }
+    }
+ 
+    tasks.withType(com.github.spotbugs.SpotBugsTask) {
+        reports {
+            xml.enabled = true
+            html.enabled = false
+        }
+    }
+
+    spotbugs {
+        toolVersion = '3.1.12'
+        sourceSets = [sourceSets.main]
+        ignoreFailures = true
+        reportsDir = file("$project.buildDir/findbugsReports")
+    }
+
+
+    //copied from https://github.com/find-sec-bugs/find-sec-bugs/wiki/Gradle-configuration
+    //FindSecurityBugs
+
+    task findSecurityBugs(type: com.github.spotbugs.SpotBugsTask) {
+        classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
+        source = fileTree(project.rootDir.absolutePath).include("**/*.java");
+        classpath = files()
+        pluginClasspath = project.configurations.spotbugsPlugins
+
+
+    }
+
+ 
+    pitest {
+        targetClasses = ["io.*"] //by default "${project.group}.*"
+        pitestVersion = "1.4.6" //not needed when a default PIT version should be used
+        timestampedReports = false
+        threads = 4
+        outputFormats = ['XML', 'HTML']
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            maven {
+                credentials {
+                    username = 'publisher'
+                    password = 'publish'
+                }
+                if (version.endsWith("SNAPSHOT")) {
+                    url 'http://si-nexus01.dev.setl.io:8081/repository/setl-snaps'
+                } else {
+                    url 'http://si-nexus01.dev.setl.io:8081/repository/setl-libs'
+                }
+            }
+        }
+    }
+
+
+    javadoc {
+        options.showAll()  
+    }
+
+    // List dependencies of all sub-projects
+    task allDependencies(type: DependencyReportTask) {}
+
+
+
+    dependencyCheck {
+        formats = ["HTML", "XML", "CSV", "JSON"]
+        outputDirectory = "$buildDir/reports/"
+    }
+}
+
+//Combined Javadoc for all subprojects
+def exportedProjects = subprojects
+task alljavadoc(type: Javadoc) {
+    options.showAll()
+    source exportedProjects.collect { it.sourceSets.main.allJava }
+    classpath = files(exportedProjects.collect { it.sourceSets.main.compileClasspath })
+    destinationDir = file("${buildDir}/docs/javadoc")
+}
+

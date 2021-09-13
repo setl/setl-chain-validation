@@ -1,0 +1,11 @@
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile group: 'io.setl', name: 'canonical-json', version: jsonCanonicalSetlVersion
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'io.swagger.core.v3', name: 'swagger-annotations', version: swaggerVersion
+
+    compile project(':chain-common')
+
+}

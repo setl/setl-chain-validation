@@ -1,0 +1,30 @@
+dependencies {
+    compile group: 'io.setl.json-simple', name: 'json-simple', version: jsonSimpleSetlVersion,changing: true
+    //TODO Remove h2 - used in IPFSStateLoader
+    compile group: 'com.h2database', name: 'h2', version: h2Version
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    compile group: 'com.google.guava', name: 'guava', version: googleGuavaVersion
+    compile group: 'org.msgpack', name: 'msgpack-core', version: messagePackVersion
+
+    compile group: 'org.msgpack', name: 'jackson-dataformat-msgpack', version: messagePackVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-afterburner', version: jacksonVersion
+
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile group: 'io.setl', name: 'passwd-common', version: setlPasswdCommon
+    compile group: 'io.setl', name: 'canonical-json', version: jsonCanonicalSetlVersion
+
+    compile group: 'org.yaml', name: 'snakeyaml', version: snakeYamlVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: springBootVersion
+
+    compile("io.micrometer:micrometer-core:${micrometerVersion}")
+    
+    compile project(':chain-common')
+    compile project(':chain-core-tx')
+    compile project(':chain-dbstore')
+
+    testCompile project(':chain-code-tx')
+}

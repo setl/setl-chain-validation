@@ -1,0 +1,9 @@
+dependencies {
+//    compile group: 'io.netty', name: 'netty-all', version: nettyVersion
+//
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+//    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile project(':chain-core')
+//    compile project(':chain-common')
+
+}

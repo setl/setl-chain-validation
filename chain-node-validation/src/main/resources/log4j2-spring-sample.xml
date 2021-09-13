@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example rolling logfile configuration -->
+<configuration>
+  <properties>
+    <property name="logfilename">vnode</property>
+    <property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} | %-5.5p | %-10.10t | %-20.20C:%-5.5L | %msg%n</property>
+    <!--
+    It will look like that:
+    2013-04-03 07:37:51.993 | WARN  | main       | lnetgateway.Server:56    | My app is logging stuff
+    -->
+    <Property name="PID">????</Property>
+    <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+    <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+    <Property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+    <Property name="FILE_LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN} ${sys:PID} --- [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+
+  </properties>
+  <appenders>
+    <Console name="ConsoleWarn" target="SYSTEM_OUT" >
+      <Filters>
+      <ThresholdFilter level="WARN"/>
+      </Filters>
+      <PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>
+    </Console>
+    <Console name="Console" target="SYSTEM_OUT" >
+      <PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>
+    </Console>
+    <RollingFile name="RollingFile" fileName="${sys:logfilename}.log"
+      filePattern="$${date:yyyy-MM}/${sys:logfilename}-%d{yyyy-MM-dd}-%i.log">
+      <PatternLayout>
+        <pattern>${FILE_LOG_PATTERN}</pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy/><!-- Rotated everyday -->
+        <SizeBasedTriggeringPolicy size="10 MB"/> <!-- Or every 100 MB -->
+      </Policies>
+    </RollingFile>
+  </appenders>
+  <loggers>
+    <root level="INFO"> <!-- We log everything -->
+      <appender-ref ref="ConsoleWarn"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </root>
+    <Logger name="org.eclipse.jetty" level="WARN" additivity="false">
+      <appender-ref ref="ConsoleWarn"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </Logger>
+    <Logger name="org.springframework" level="WARN" additivity="false">
+      <appender-ref ref="ConsoleWarn"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </Logger>
+    <Logger name="io.setl.bc.pychain.peer" level="WARN" additivity="false">
+      <appender-ref ref="ConsoleWarn"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </Logger>
+    <Logger name="io.setl.scenario" level="INFO" additivity="false">
+      <appender-ref ref="Console"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </Logger>
+    <Logger name="io.setl.bc.pychain.node" level="INFO" additivity="false">
+      <appender-ref ref="Console"/> <!-- To console -->
+      <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+    </Logger>
+  </loggers>
+</configuration>

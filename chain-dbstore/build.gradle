@@ -1,0 +1,10 @@
+dependencies {
+    compile group: 'io.setl.json-simple', name: 'json-simple', version: jsonSimpleSetlVersion,changing: true
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+
+    compile group: 'org.msgpack', name: 'msgpack-core', version: messagePackVersion
+    compile group: 'io.setl', name: 'util-msgpack', version: utilMsgpackVersion
+    compile group: 'io.setl', name: 'passwd-common', version: setlPasswdCommon
+
+    compile project(':chain-common')
+}

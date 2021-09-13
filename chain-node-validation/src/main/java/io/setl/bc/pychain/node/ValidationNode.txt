@@ -1,0 +1,238 @@
+//		=======
+//
+//				def generate_next_proposal(SETLState, log, peermsgsout, loglevel=LOG_LEVEL.Proposal):
+//					   """
+//
+//					   :param s:                State object
+//					   :param log:              Log handler
+//					   :param peermsgsout:      Peer message queue
+//					   :return:
+//					   
+//					   """
+//					   
+//					   try:
+//					      if not SETLState.SIGNINGON:
+//					         return False
+//					      
+//					      # Validate SETLState.Height
+//					      if SETLState.height is None:
+//					         return False
+//
+//					      if (SETLState.networkheight is None) or (SETLState.height < SETLState.networkheight):
+//					         return False
+//
+//					      # Already a proposal at this height ?
+//					      if SETLState.height in SETLState.PROPOSALPOOL and len(SETLState.PROPOSALPOOL[SETLState.height]) > 0:
+//					         return False
+//
+//					      blockCreationTime = int(time.time())
+//					      cur_interval = SETLState.cur_interval(blockCreationTime)
+//
+//					      # current State View taken from SETLState.CurrentHeightStateList
+//					      # Check out state view is up to date.
+//					      currentState = SETLState.getCurrentState()
+//					      if currentState is None or currentState.height < SETLState.height:
+//					         return False
+//					      
+//					      # Limit proposals to signing nodes ?
+//					      # Check for any signing power
+//					      if SETLState.config.requiresignedproposals:
+//					         totalSig = 0
+//					         for address in SETLState.sigWallet.signodes:
+//					            sigBalance = currentState.signodes.get_item(address)
+//					            if sigBalance:
+//					               totalSig += sigBalance[2]
+//					               
+//					            if totalSig > 0:
+//					               break
+//					         
+//					         # No Signing power -> No proposal.
+//					         if totalSig <= 0:
+//					            return False       
+//					      
+//					      # If (no Transactions, in TXPOOL or txlist) and (No pending Time Events), exit.
+//					      if (len(SETLState.TXPOOL) == 0) and (not currentState.anyPendingEventTime(blockCreationTime)):
+//					         SETLState.lastValidProposalTimestamp = cur_interval
+//					         return False
+//
+//					      if (time.time() - cur_interval) >= (INTERVAL_LENGTH * 0.4):
+//					         #log.log(loglevel, 'too late to create a proposal in this interval, try next time.', str(time.time()), str(cur_interval))
+//					         return False
+//
+//					      #
+//					      # our turn ?
+//					      # Using a deterministic seed, choose a signing address at 'random'
+//					      if (SETLState.lastProposalSelectedSignage[0] == cur_interval):
+//					         selectedAddress = SETLState.lastProposalSelectedSignage[1]
+//					      else:
+//					         selectedAddress = False
+//					         newSigner = get_selected_signer(SETLState, cur_interval)
+//
+//					         if (newSigner):
+//					            SETLState.lastProposalSelectedSignage = newSigner
+//					            selectedAddress = SETLState.lastProposalSelectedSignage[1]
+//					            log.log(loglevel, "Random seed details " + str((newSigner, len(currentState.signodes.merklelist))))
+//					            log.log(loglevel, "Preferred proposal address " + str(cur_interval) + " " + str(selectedAddress))
+//
+//					      if not (selectedAddress in SETLState.sigWallet.signodes):
+//					         #log.log(0, 'Not our turn to propose', selectedSignage, (time.time() - cur_interval))
+//
+//					         # Have pre-received a 'PreparingProposal message?
+//					         #if (s.networkPreparingProposal[1][0] == cur_interval) and (s.networkPreparingProposal[1][2] == SETLState.height) and (s.networkPreparingProposal[1][3] == currentState.blockhash):
+//					         #   if (selectedAddress == SETLState.networkPreparingProposal[1][1]):
+//					         #      # OK, Count us out of this round
+//					         #      log.log(loglevel, '  OK, no proposals for us. (From networkPreparingProposal cache)')
+//
+//					         if ((time.time() - SETLState.lastValidProposalTimestamp) <= SETLState.config.networkProposalTimeout):
+//					            pass
+//					            return
+//
+//					         log.log(loglevel, "propose anyway, they're out of time.", (time.time() - SETLState.lastValidProposalTimestamp))
+//					         
+//					         debugpoint = 0
+//					         
+//					      if (selectedAddress in SETLState.sigWallet.signodes) and (SETLState.lastProposalSelectedSignage[2] == SETLState.height):
+//					         # note 'appendleft' to prioritise this message.
+//					         try:
+//					            log.log(loglevel, 'Sending P2P_MESSAGE.PreparingProposal : ' + str(selectedAddress))
+//					            SETLState.peer_msgs_out.appendleft(prepAndPackPeerMessage(True, (None, None), P2P_MESSAGE.PreparingProposal, PeerMessage(P2P_MESSAGE.PreparingProposal, SETLState.lastProposalSelectedSignage)))
+//					            # Allow the message to be sent.
+//					            gevent.sleep(0)
+//					            gevent.sleep(0)
+//					         except Exception as emesg:
+//					            showTraceback(log.log)
+//
+//					      log.log(loglevel, 'generate_proposal() Creating Proposal')
+//
+//					      basehash = currentState.generate_statehash()
+//					      previousblockhash = currentState.blockhash
+//
+//					      #
+//					      contractEvents = []
+//					      myEffectiveTXList = []
+//					      xChainTX = []
+//					      xcTxPackageCount = 0
+//					      xcTxCount = 0
+//					      doXChain = False
+//					      onlyEmptyXcTransactions = False
+//					      
+//					      if (len(currentState.xchainsignodes) > 0):
+//					         doXChain = True
+//					      
+//					      #
+//					      
+//					      selectTransactions = []
+//					      
+//					      TXPOOL = SETLState.TXPOOL
+//					      workingSet = []
+//					      SETL_NETWORK = chainvars.SETL_NETWORK
+//
+//					      t1 = time.time()
+//					      
+//					      # First, get nonce contiguous set of TXs
+//					      
+//					      sortedPool = sorted(TXPOOL.values(), key=sortTXp_AddressNonceHash)
+//					      lastAddress = ''
+//					      gapFound = False
+//					      currentnonce = 0
+//					      blockCreationTime = int(time.time())
+//					     
+//					      t2 = time.time()
+//					      
+//					      # Create set of TXs satisfying the continuous nonce requirement
+//					      # TODO : Protocol for missing nonces
+//					      
+//					      for thisTX in sortedPool:
+//					         # Check Base Chain : this should never be True
+//					         if (thisTX.basechain != SETL_NETWORK):
+//					            del TXPOOL[thisTX.hash]
+//					            continue         
+//					         
+//					         # Get base Nonce, if necessary.
+//					         
+//					         if (thisTX.txtype == 0x81):
+//					            if (thisTX.xchainid != lastAddress):
+//					               lastAddress = thisTX.xchainid
+//					               gapFound = False
+//					               # note '+1' on nonce. Current state is the last height, nonce is the next height for xChain TX Package.
+//					               currentnonce = currentState.xchainsignodes[thisTX.xchainid][1] + 1
+//					               
+//					         elif (thisTX.fromaddr != lastAddress):
+//					            lastAddress = thisTX.fromaddr
+//					            gapFound = False
+//					            currentnonce = currentState.get_priority_nonce(thisTX.fromaddr, 0)
+//					         
+//					         # Check Nonces
+//					         
+//					         #if thisTX.txtype in [3,4,5]:
+//					         #   # Type 3,4,5 do not increnent nonce.
+//					         #   # 0x81 (xChain TX Package does not have a nonce (except for block height))
+//					         #   
+//					         #   workingSet.append(thisTX.copy())
+//					         # else   
+//					         if (thisTX.txtype == 0x81):
+//					            if (thisTX.nonce == currentnonce):
+//					               # Nonce is OK.
+//					               workingSet.append(thisTX.copy())
+//					               currentnonce += 1     
+//					                  
+//					            elif (thisTX.nonce < currentnonce):
+//					               del TXPOOL[thisTX.hash]
+//					               
+//					            else:
+//					               # nonce gap.
+//					               gapFound = True
+
+
+
+
+=================================
+
+
+//					def handle_incoming_preparingproposal_msg(msg, origin, SETLState, log, peermsgsout):
+//						   # msg[2] format as per SETLState.lastProposalSelectedSignage : i.e. get_selected_signer() return value
+//						   # (Interval, Address, Height, State View BlockHash)
+//						   
+//						   try:
+//						         
+//						      thisMessage = msg[2]
+//						      proposalHeight = thisMessage[2]
+//						      
+//						      log.log(0, 'Received P2P_MESSAGE.PreparingProposal GREPTAG : ' + str((origin, thisMessage)) + " , " + str((SETLState.lastProposalSelectedSignage, SETLState.height)))
+//						      
+//						      
+//						      if (SETLState.lastProposalSelectedSignage[2] == proposalHeight) and (SETLState.height == proposalHeight):
+//						         
+//						         currentState = SETLState.getCurrentState()
+//						         
+//						         if (currentState):
+//						            # If the address that we are expecting to propose, says that it is proposing...
+//						            if (thisMessage[1] == SETLState.lastProposalSelectedSignage[1]) and (thisMessage[3] == currentState.blockhash):
+//						               pass
+//						            
+//						            else:
+//						               log.log(0, '  handle_incoming_preparingproposal_msg(). This is not the address you were looking for....')
+//						               log.log(0, '     ' + str((thisMessage[1], SETLState.lastProposalSelectedSignage[1], thisMessage[3], currentState.blockhash)))
+//						         
+//						      elif (SETLState.lastProposalSelectedSignage[2] < proposalHeight) and (SETLState.height == proposalHeight):
+//						         
+//						         log.log(0, '  Saving Received P2P_MESSAGE.PreparingProposal ' + str(thisMessage))
+//						         SETLState.networkPreparingProposal = (proposalHeight, thisMessage)
+//
+//						      else:
+//						         log.log(0, '    P2P_MESSAGE.PreparingProposal out of synch ?')
+//						         
+//						   except Exception as emesg:
+//						      showTraceback(log.log)
+
+
+
+//[16,2,65,ef74786764edbaef5bcbfa765529d35bc9f0efb3a209b74434eb2ab1bb4f8b9b,1491925585,[],
+//[16,3,65,ef74786764edbaef5bcbfa765529d35bc9f0efb3a209b74434eb2ab1bb4f8b9b,02fcda436827ee446b7f70211fff37e2b2c3ede37829a8d7903c217f5dafb82d,[[16,4,7,d6083552a3c895b1d48853c6746585c71cc0a9da2b5440ce69fd0f27c918c32c,58,true,b3c9e85eea70030e4b0c6d25dc4699797cc34d97aed6345e42a1d15869c9cfdf,12QJMKa86bpSEUcLzUAJR9TvhqwhQbAJU7,BofE,GBP,18GcQZmPnYSA2AWQ6vGiScKh9ETTb6ccar,100,RVpZ6yJvglVKOR7MLFxyoc6GXOguGV1/Afh3/syZ9h5SGQM4k1FSTJ3R8/xG0wB2cmFuV4tI55fJpTGNXsjVCg==,CHAPS,oA==,65]],[],[],1491925585,andrews-iMac.local,,[],[],[],[],[],[]],
+//					andrews-iMac.local,
+//					{latitude=51.4964,ip=82.69.97.26,country=GB,longitude=-0.1224,regionname=null,},
+//					[[60a6356d13107faf10f223af313ef9bde4fc4536c252cee0ed09e6955aa18038,kHIjNykb68XMN7DM4kceu3VfXLmkxaBeZVvUEKlQVhv4OLJHrp34Zb6MTFe7IMemc7xNyjFB3V2tzeAMT//vAw]]]
+//					16:46:25.014 [nioEventLoopGroup-2-4] WARN  io.setl.bc.pychain.node.ValidationNode - Proposal received without notification of being prepared
+//					16:46:25.016 [nioEventLoopGroup-2-4] INFO  io.setl.bc.pychain.node.ValidationNode - PROPOSAL raw:size=10 [[16,2,65,ef74786764edbaef5bcbfa765529d35bc9f0efb3a209b74434eb2ab1bb4f8b9b,1491925585,[],[16,3,65,ef74786764edbaef5bcbfa765529d35bc9f0efb3a209b74434eb2ab1bb4f8b9b,02fcda436827ee446b7f70211fff37e2b2c3ede37829a8d7903c217f5dafb82d,[[16,4,7,d6083552a3c895b1d48853c6746585c71cc0a9da2b5440ce69fd0f27c918c32c,58,true,b3c9e85eea70030e4b0c6d25dc4699797cc34d97aed6345e42a1d15869c9cfdf,12QJMKa86bpSEUcLzUAJR9TvhqwhQbAJU7,BofE,GBP,18GcQZmPnYSA2AWQ6vGiScKh9ETTb6ccar,100,RVpZ6yJvglVKOR7MLFxyoc6GXOguGV1/Afh3/syZ9h5SGQM4k1FSTJ3R8/xG0wB2cmFuV4tI55fJpTGNXsjVCg==,CHAPS,oA==,65]],[],[],1491925585,andrews-iMac.local,,[],[],[],[],[],[]],andrews-iMac.local,{latitude=51.4964,ip=82.69.97.26,country=GB,longitude=-0.1224,regionname=null,},[[60a6356d13107faf10f223af313ef9bde4fc4536c252cee0ed09e6955aa18038,kHIjNykb68XMN7DM4kceu3VfXLmkxaBeZVvUEKlQVhv4OLJHrp34Zb6MTFe7IMemc7xNyjFB3V2tzeAMT//vAw]]]]
+//					16:46:25.016 [nioEventLoopGroup-2-4] INFO  io.setl.bc.pychain.node.ValidationNode - 7=andrews-iMac.local, 8={latitude=51.4964,ip=82.69.97.26,country=GB,longitude=-0.1224,regionname=null,}, 9=[[60a6356d13107faf10f223af313ef9bde4fc4536c252cee0ed09e6955aa18038, kHIjNykb68XMN7DM4kceu3VfXLmkxaBeZVvUEKlQVhv4OLJHrp34Zb6MTFe7IMemc7xNyjFB3V2tzeAMT//vAw]]
+

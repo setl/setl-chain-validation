@@ -1,0 +1,31 @@
+apply plugin: 'org.springframework.boot'        //For fat jar support
+
+springBoot {
+    mainClassName = 'io.setl.bc.pychain.node.ValidationNode'
+}
+
+buildscript {
+    repositories {
+        //Allow local repository for snapshot builds
+        if (version.endsWith("SNAPSHOT")) { mavenLocal() }
+        maven { url "http://si-nexus01.dev.setl.io:8081/repository/maven-public/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:" + springBootVersion)
+    }
+}
+
+
+dependencies {
+    runtime project(':chain-dash-web')
+    runtime project(':chain-dash-scenario')
+    runtime project(':chain-api-web')
+    runtime project(':chain-node-validation').configurations.runtime.dependencies
+
+    compile project(':chain-node-validation').sourceSets.main.output
+    compile project(':chain-node-validation').configurations.compile.dependencies
+}
+
+jar.from sourceSets.main.output
+jar.from project(':chain-node-validation').sourceSets.main.output
+

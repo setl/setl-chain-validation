@@ -1,0 +1,12 @@
+plugins {
+  id "java-library"
+}
+
+dependencies {
+  api group: 'org.leadpony.justify', name: 'justify', version: '2.1.0'
+  api group: 'io.setl', name: 'canonical-json', version: jsonCanonicalSetlVersion
+  api group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-smile', version: jacksonVersion
+
+  api project(':chain-code-tx')
+  api project(':chain-core')
+}

@@ -1,0 +1,51 @@
+#The base directory of the blockchain
+basedir=/setl/testnets_new/16/
+
+#The wallet file to be used - located at $basedir/wallet-(n).dat
+wallet=4
+
+#The chain id
+chainid=16
+
+#The node to be used for state(n).db, and $basedir/(n)/Balance and $basedir/(n)/Blocks
+sourcenodeid=1
+
+#The type of persisted state to be used
+statemode=mono
+
+#The port used for HTTP server
+server.port=8090
+
+#The listen port for P2P service
+p2p.listen.port=33410
+
+#The P2P host that will be connected to.
+p2p.peer.host=localhost
+#The P2P port that will be connected to.
+p2p.peer.port=13400
+
+# Kafka Config
+# Bootstrap servers
+p2p.kafka.brokers=127.0.0.1:9092
+
+# Does not have to be unique (?), but should be.
+p2p.kafka.clientid=node-${chainid}-${sourcenodeid}
+
+# Group ID. For most nodes, this should be unique, else the node will not get all messages.
+p2p.kafka.groupid=node-${chainid}-${sourcenodeid}
+
+# Topics to be consumed by this node
+p2p.kafka.consume.topics=transactions,consensus,info
+
+# Functional Topic names (consistent with p2p.kafka.consume.topics) used for publishing or arranging consumers
+p2p.kafka.topics.blocks=blocks
+p2p.kafka.topics.transactions=transactions
+p2p.kafka.topics.consensus=consensus
+p2p.kafka.topics.info=info
+#
+
+#The nodename passed in P2P requests
+nodename=wibble
+
+#The transport service to be used
+transport=netty

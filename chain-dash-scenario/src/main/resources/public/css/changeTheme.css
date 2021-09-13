@@ -1,0 +1,45 @@
+/* --------------------------------------------------------
+Template Settings
+-----------------------------------------------------------*/
+/*#settings {*/
+    /*position: fixed;*/
+    /*right: 0;*/
+    /*color: #000;*/
+    /*background: rgba(255, 255, 255, 0.88);*/
+    /*padding: 7px 8px;*/
+    /*top: 120px;*/
+    /*z-index: 1000;*/
+    /*cursor: pointer;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.22);*/
+    /*font-family: open-sans-regular;*/
+    /*border-radius: 5px 0px 0px 5px !important;*/
+    /*line-height: 20px;*/
+    /*width: 34px;*/
+    /*white-space: nowrap;*/
+    /*-webkit-transition: width 300ms;*/
+    /*-moz-transition: width 300ms;*/
+    /*transition: width 300ms;*/
+/*}*/
+
+/*#settings i {*/
+    /*font-size: 21px;*/
+    /*float: left;*/
+    /*margin-right: 10px;*/
+/*}*/
+
+/*#settings:hover {*/
+    /*background: #fff;*/
+    /*width: 130px;*/
+/*}*/
+
+/*.template-skins [class*="col-"] img {*/
+    /*border: 3px solid rgba(0,0,0,0.5);*/
+/*}*/
+
+/*.template-skins [class*="col-"] img:hover {*/
+    /*opacity: 0.8;*/
+/*}*/
+
+/*.template-skins [class*="col-"] {*/
+    /*margin-bottom: 10px;*/
+/*}*/

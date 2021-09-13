@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" monitorInterval="5">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="Console"/>
+    </Root>
+    <Logger name="com.setl" level="DEBUG" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.springframework" level="INFO" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <!-- TODO: Temporary fix waiting for release of version 4.6.7
+    see https://github.com/eclipse/jetty.project/issues/1603
+    -->
+    <Logger name="org.eclipse.jetty" level="INFO" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <Logger name="com.solacesystems" level="OFF">
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+  </Loggers>
+</Configuration>

@@ -1,0 +1,188 @@
+{
+  "stateName": "initial_state.json",
+  "tests": [
+    {
+      "name": "create namespace",
+      "returnTuple": {
+        "success": "PASS"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_DATA_NAMESPACE",
+        "namespace": {
+          "id": "test-1",
+          "title": "My first JSON Data namespace",
+          "privileges": {
+            "createAcl": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "createRole": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "createValidator": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "deleteNamespace": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "forceDelete": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "readAcl": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "readNamespace": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "readRole": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "readValidator": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "updateAcl": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "updateNamespace": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ],
+            "updateRole": [
+              "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+            ]
+          }
+        }
+      },
+      "changes": [
+        {
+          "op": "add",
+          "path": "/merkles/io.setl.bc.json.data.DataNamespace",
+          "value": [
+            {
+              "defaultAclId": [
+                "",
+                ""
+              ],
+              "defaultValidator": [
+                "",
+                ""
+              ],
+              "id": "test-1",
+              "lastModified": 1581549995,
+              "metadata": "",
+              "privileges": {
+                "createAcl": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "createDocument": [],
+                "createRole": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "createValidator": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "deleteAcl": [],
+                "deleteAclRole": [],
+                "deleteNamespace": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "deleteValidator": [],
+                "forceDelete": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "readAcl": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "readDescription": [],
+                "readNamespace": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "readRole": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "readValidator": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "updateAcl": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "updateDescription": [],
+                "updateNamespace": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ],
+                "updateRole": [
+                  "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A"
+                ]
+              },
+              "title": "My first JSON Data namespace",
+              "updateHeight": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "create namespace with empty ID",
+      "returnTuple": {
+        "success": "WARNING"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_DATA_NAMESPACE",
+        "namespace": {
+          "id": "",
+          "title": "My first JSON Data namespace",
+          "privileges": {}
+        }
+      },
+      "checkOnly": true
+    },
+    {
+      "name": "create namespace with bad ACL ID",
+      "returnTuple": {
+        "success": "WARNING"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_DATA_NAMESPACE",
+        "namespace": {
+          "id": "Bad ACL",
+          "title": "My first JSON Data namespace",
+          "privileges": {},
+          "defaultAclId": [
+            "foo",
+            "bar"
+          ]
+        }
+      },
+      "checkOnly": true
+    },
+    {
+      "name": "create namespace with bad validator ID",
+      "returnTuple": {
+        "success": "WARNING"
+      },
+      "transaction": {
+        "chainId": 30,
+        "fromAddress": "ADZzhwmlp8DpN8w0BqOkqIihmeIEZJlY5A",
+        "fromPublicKey": "3059301306072A8648CE3D020106082A8648CE3D03010703420004D72821999622FF0885A1ABE749748F74D545E0A7B2EE164B3958C281AD22C931346B49E3CB5441334729D5A71E253B25476FB776B700936B9677EE7A2003EF71",
+        "txType": "JSON_CREATE_DATA_NAMESPACE",
+        "namespace": {
+          "id": "Bad ACL",
+          "title": "My first JSON Data namespace",
+          "privileges": {},
+          "defaultValidator": [
+            "foo",
+            "bar"
+          ]
+        }
+      },
+      "checkOnly": true
+    }
+  ]
+}
